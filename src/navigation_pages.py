@@ -2,6 +2,7 @@
 
 
 from types_src import *
+from utils import change_page_loading
 import time, re
 
 
@@ -24,6 +25,6 @@ def navigate_to(driver: WebDriver, to = "next", wait = 4):
     """
     xpath = TYPE_PAGES[to]
     driver.find_element(By.XPATH, xpath).click()
-    time.sleep(wait)
+    change_page_loading(driver)
     return page_num(driver)
 

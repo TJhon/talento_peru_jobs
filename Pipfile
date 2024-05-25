@@ -9,6 +9,7 @@ numpy = "*"
 requests = "*"
 selenium = "*"
 streamlit = "*"
+picke = "*"
 
 [dev-packages]
 

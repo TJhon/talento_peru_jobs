@@ -7,6 +7,9 @@ import time
 # location dropdown (ubicacion)
 
 region_filter_dropdown = '//*[@id="frmLstOfertsLabo:cboDep"]/div[3]/span'
+# //*[@id="frmLstOfertsLabo:cboDep"]/div[3]/span
+
+# //*[@id="frmLstModFormativas:cboDep"]/div[3]/span
 ID_index = "frmLstOfertsLabo:cboDep_{}"
 apply_filter = '//*[@id="frmLstOfertsLabo:j_idt42"]/span'
 # #

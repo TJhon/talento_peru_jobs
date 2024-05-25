@@ -1,6 +1,7 @@
 
 from types_src import *
 from selenium.webdriver.common.by import By
+import pandas as pd
 
 
 def get_text(driver: WebDriver, xpath):
@@ -64,5 +65,5 @@ def get_info_box(driver: WebDriver, n_box):
     return ref_dict
 
 def get_info_page(driver: WebDriver, n_total):
-
-    return [get_info_box(driver, int(n) + 1) for n in range(n_total)]
+    actual_data = [get_info_box(driver, int(n) + 1) for n in range(n_total)]
+    return pd.DataFrame(actual_data)
