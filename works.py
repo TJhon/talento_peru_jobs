@@ -8,7 +8,6 @@ def main():
 
     args = parser.parse_args()
 
-    # Aquí puedes utilizar el valor de r_reg como necesites
     scrapper(n_reg=args.n_reg)
 
 
