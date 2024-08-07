@@ -1,4 +1,4 @@
-name: Actualizar Trabajos
+name: Actualizar Trabajos - Diario
 
 on:
   push:
