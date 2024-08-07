@@ -3,4 +3,3 @@ numpy
 requests
 selenium
 streamlit
-picke
