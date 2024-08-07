@@ -22,7 +22,7 @@ def main():
     if args.local == 1:
         scrapper(n_reg=args.n_reg)
     else:
-        scrapper(n_reg=args.n_reg, options=options)
+        scrapper(n_reg=args.n_reg, options=options, github=True)
 
 
 if __name__ == "__main__":

@@ -17,7 +17,7 @@ from .utils import query_success
 from .navigation_pages import navigate_to, page_num
 
 
-def scrapper(options=None, n_reg=1):
+def scrapper(options=None, n_reg=1, github=False):
 
     if options is not None:
         driver = webdriver.Chrome(options=options)
@@ -26,6 +26,11 @@ def scrapper(options=None, n_reg=1):
     driver.get(
         "https://app.servir.gob.pe/DifusionOfertasExterno/faces/consultas/ofertas_laborales.xhtml"
     )
+    time.sleep(20)
+    if github:
+        driver.save_screenshot("./logs/github.png")
+        driver.quit()
+        return "Save screenshot"
 
     print("complete loading")
 
@@ -44,5 +49,7 @@ def scrapper(options=None, n_reg=1):
         data = pd.concat([data, result_page])
         print(begin_page, total_pages)
 
+    driver.quit()
+    # driver.save_screenshot("./img.png")
     data = pd.DataFrame(data)
     data.to_csv(f"./data/{today}_{location}.csv", index=False)

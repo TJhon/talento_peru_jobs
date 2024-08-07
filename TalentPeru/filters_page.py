@@ -36,7 +36,9 @@ def filter_region(driver: WebDriver, n_list: int):
     """
 
     # seleccionar filtro
-    complete_web(driver, region_filter_dropdown, 100)
+    # complete_web(driver, region_filter_dropdown, 100)
+    wait = WebDriverWait(driver, 10)
+    element = wait.until(EC.element_to_be_clickable((By.XPATH, region_filter_dropdown)))
 
     driver.find_element(By.XPATH, region_filter_dropdown).click()
     time.sleep(1)
