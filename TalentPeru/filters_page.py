@@ -3,6 +3,7 @@
 from .types_src import *
 import time
 
+
 # location dropdown (ubicacion)
 
 region_filter_dropdown = '//*[@id="frmLstOfertsLabo:cboDep"]/div[3]/span'
@@ -35,7 +36,7 @@ def filter_region(driver: WebDriver, n_list: int):
     """
 
     # seleccionar filtro
-    success(driver, region_filter_dropdown)
+    complete_web(driver, region_filter_dropdown, 100)
 
     driver.find_element(By.XPATH, region_filter_dropdown).click()
     time.sleep(1)
