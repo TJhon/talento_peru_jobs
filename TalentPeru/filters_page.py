@@ -14,6 +14,20 @@ apply_filter = '//*[@id="frmLstOfertsLabo:j_idt42"]/span'
 # #
 
 
+def verify_element(xpath: str, driver: WebDriver):
+    find = driver.find_elements(By.XPATH, xpath)
+    return find, len(find) > 0
+
+
+def success(driver: WebDriver, xpath: str, attemps=15):
+    find, popup = verify_element(xpath, driver)
+    n = 1
+    while not popup | n <= attemps:
+        time.sleep(1)
+        print("loading", popup)
+        find, popup = verify_element(xpath, driver)
+
+
 # //*[@id="frmLstOfertsLabo:cboDep_1"]
 def filter_region(driver: WebDriver, n_list: int):
     """
@@ -21,6 +35,8 @@ def filter_region(driver: WebDriver, n_list: int):
     """
 
     # seleccionar filtro
+    success(driver, region_filter_dropdown)
+
     driver.find_element(By.XPATH, region_filter_dropdown).click()
     time.sleep(1)
     item_drop = driver.find_element(By.ID, ID_index.format(n_list))

@@ -27,7 +27,6 @@ def scrapper(options=None, n_reg=1):
         "https://app.servir.gob.pe/DifusionOfertasExterno/faces/consultas/ofertas_laborales.xhtml"
     )
 
-    time.sleep(3)
     print("complete loading")
 
     location = filter_region(driver, n_reg)
