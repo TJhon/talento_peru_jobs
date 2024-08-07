@@ -1,4 +1,4 @@
-from types_src import *
+from .types_src import *
 import time
 
 # pop up para cuando la pagina se cargo correctamente

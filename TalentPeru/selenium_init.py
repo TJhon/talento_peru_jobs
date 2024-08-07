@@ -2,19 +2,19 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time, pandas as pd
-import json
+
 from selenium.webdriver.common.action_chains import ActionChains
+import pytz
+import datetime
+
+gmt5 = pytz.timezone("Etc/GMT+5")
+today = datetime.datetime.now(gmt5).strftime("%d-%m-%Y")
 
 
-from data_in_page import get_info_page, get_info_box, get_n_positions
-
-
-from filters_page import filter_region
-from utils import query_success
-from navigation_pages import navigate_to, page_num
-
-
-import multiprocessing
+from .data_in_page import get_info_page, get_info_box, get_n_positions
+from .filters_page import filter_region
+from .utils import query_success
+from .navigation_pages import navigate_to, page_num
 
 
 def scrapper(options=None, n_reg=1):
@@ -46,4 +46,4 @@ def scrapper(options=None, n_reg=1):
         print(begin_page, total_pages)
 
     data = pd.DataFrame(data)
-    data.to_csv(f"./data/{location}.csv", index=False)
+    data.to_csv(f"./data/{today}_{location}.csv", index=False)

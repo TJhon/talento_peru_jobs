@@ -1,7 +1,6 @@
-
 # aplicacion de los filtros
 
-from types_src import *
+from .types_src import *
 import time
 
 # location dropdown (ubicacion)
@@ -33,6 +32,3 @@ def filter_region(driver: WebDriver, n_list: int):
     # aplicar filtro
     driver.find_element(By.XPATH, apply_filter).click()
     return location_main
-
-    
-
