@@ -28,6 +28,7 @@ def scrapper(options=None, n_reg=1, github=False):
     )
     time.sleep(20)
     if github:
+        print("save screenshow")
         driver.save_screenshot("./logs/github.png")
         driver.quit()
         return "Save screenshot"
