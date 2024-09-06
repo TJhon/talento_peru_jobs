@@ -23,7 +23,7 @@ jobs:
           choco install googlechrome
           choco install chromedriver
       - name: Ejecutar script Python
-        run: python works.py --n_reg=24 --local=0
+        run: python works.py 
       - name: Commit files
         run: |
           git config --local user.name "action-user"
