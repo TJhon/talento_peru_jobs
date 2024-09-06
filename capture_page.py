@@ -1,19 +1,30 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
-# Configuración de Selenium para usar el driver de Chrome automáticamente
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+# Configurar opciones de Chrome
+chrome_options = Options()
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-dev-shm-usage")  # Opcional: Para entornos con poca memoria compartida
+chrome_options.add_argument("--headless")
+
+# Inicializar Selenium con Chrome
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
 # Navegar a la página
 driver.get("https://app.servir.gob.pe/DifusionOfertasExterno/faces/consultas/ofertas_laborales.xhtml")
 
-# Esperar 10 segundos para asegurar que la página cargue completamente
+# Esperar 10 segundos para que la página cargue completamente
+print("waiting")
 time.sleep(10)
 
-# Tomar la captura de pantalla
+# Tomar captura de pantalla
 driver.save_screenshot("captura_pagina.png")
 
 # Cerrar el navegador
 driver.quit()
+
+
+
