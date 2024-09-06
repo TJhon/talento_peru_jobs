@@ -14,7 +14,7 @@ chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
 # Navegar a la página
-driver.get("https://app.servir.gob.pe/DifusionOfertasExterno/faces/consultas/ofertas_laborales.xhtml")
+driver.get("https://www.google.com")
 
 # Esperar 10 segundos para que la página cargue completamente
 print("waiting")
