@@ -23,8 +23,8 @@ def query_success(driver: WebDriver):
         time.sleep(1)
         print("loading", popup)
         find, popup = success()
-    print(find[0].text)
     time.sleep(1)
+    return find[0].text
 
 
 def change_page_loading(driver: WebDriver):
