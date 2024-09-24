@@ -2,7 +2,7 @@ name: Actualizar Trabajos - Diario
 on:
   push:
     branches:
-      - wf_windows
+      - fail_get_url_fail_page_error
 jobs:
   Scrapper:
     runs-on: windows-latest
@@ -23,7 +23,7 @@ jobs:
           choco install googlechrome
           choco install chromedriver
       - name: Ejecutar script Python
-        run: python works.py 
+        run: python works.py
       - name: Commit files
         run: |
           git config --local user.name "action-user"

@@ -3,7 +3,7 @@ name: Actualizar Trabajos - Diario
 on:
   push:
     branches:
-      - workflow
+      - fail_get_url_fail_page_error
 
 jobs:
   Scrapper:
