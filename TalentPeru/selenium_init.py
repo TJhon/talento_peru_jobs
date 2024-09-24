@@ -48,7 +48,7 @@ def find_in_region(driver, n_reg):
         begin_page, total_pages = navigate_to(driver)
         total_positions_in_page = get_n_positions(driver)
         result_page = get_info_page(driver, total_positions_in_page)
-        data = pd.concat([data, result_page])
+        data = pd.concat([data, result_page], ignore_index=True)
         print(begin_page, total_pages)
 
     return data, location, num_works
