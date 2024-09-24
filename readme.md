@@ -9,3 +9,9 @@ pipenv install
 # local: 0 - Github Actions
 python .\works.py --n_reg={num_region} --local=0
 ```
+
+# Docker
+
+```sh
+docker-compose run airflow-worker airflow users create --role Admin --username admin --email admin --firstname admin --lastname admin --password admin
+```

@@ -68,7 +68,7 @@ def save_data(data, location, num_works):
     into_log(location, today, num_works)
 
 
-PATH_LOG = "./logs/logs.csv"
+PATH_LOG = "./data_logs/logs.csv"
 
 
 def into_log(dep, date, n_jobs_text) -> None:
