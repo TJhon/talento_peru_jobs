@@ -1,5 +1,7 @@
 pandas
 numpy
 requests
-selenium
-streamlit
+# selenium
+# streamlit
+tqdm
+bs4
