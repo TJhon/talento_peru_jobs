@@ -23,7 +23,7 @@ def run_git_commands(total_time):
 
     subprocess.run(["git", "add", "-A"], check=True)
 
-    commit_message = f"Data with requests {today}, total time:  {total_time} seconds"
+    commit_message = f"Data with requests {today}, total time: {total_time} seconds"
     subprocess.run(["git", "commit", "-m", commit_message], check=True)
 
     subprocess.run(["git", "push"], check=True)
