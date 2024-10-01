@@ -2,16 +2,14 @@ Scrapeando las oportunidades laborales de https://app.servir.gob.pe/DifusionOfer
 
 # Uso
 
-```sh
-pip install pipenv
-pipenv install
-# num_region 1-24
-# local: 0 - Github Actions
-python .\works.py --n_reg={num_region} --local=0
+```
+pip install -r requirements.txt 
+python main.py
 ```
 
-# Docker
+# TODO:
 
-```sh
-docker-compose run airflow-worker airflow users create --role Admin --username admin --email admin --firstname admin --lastname admin --password admin
-```
+- [ ] Api: Fast API
+- [ ] Metricas
+- [ ] DataFrame format
+- [ ] Web App
