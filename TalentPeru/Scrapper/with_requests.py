@@ -8,6 +8,12 @@ from .global_env import URL, HEADERS, PAYLOAD
 
 warnings.filterwarnings("ignore")
 
+cookies = {
+    "JSESSIONID": "AfLN1NxlepP0QpGSuesFamCh.node31",
+    "_ga": "GA1.3.1210958502.1727727309",
+    "_gid": "GA1.3.1263883292.1727727309",
+}
+
 
 def get_payload(soup):
     view_state_input = soup.find("input", {"name": "javax.faces.ViewState"})
@@ -20,7 +26,7 @@ def first_session(url=URL, head=HEADERS):
 
     session = requests.Session()
 
-    fp_request = session.get(url, headers=head)
+    fp_request = session.get(url, headers=head, cookies=cookies, timeout=10)
 
     fp_page_soup = bsoup(fp_request.content, features="lxml")
     payload = get_payload(fp_page_soup)
