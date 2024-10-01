@@ -26,7 +26,14 @@ def first_session(url=URL, head=HEADERS):
 
     session = requests.Session()
 
-    fp_request = session.get(url, headers=head, cookies=cookies, timeout=10)
+    proxy = {"ip": "67.43.236.19", "port": "17293"}
+
+    p = {
+        "http": f"http://{proxy['ip']}:{proxy['port']}",
+        "https": f"http://{proxy['ip']}:{proxy['port']}",
+    }
+
+    fp_request = session.get(url, headers=head, cookies=cookies, proxies=p, timeout=10)
 
     fp_page_soup = bsoup(fp_request.content, features="lxml")
     payload = get_payload(fp_page_soup)
