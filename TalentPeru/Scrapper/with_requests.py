@@ -95,6 +95,10 @@ def convert_in_df(html_page):
     return data
 
 
+algo = requests.get("google.com")
+print(algo.status_code)
+print("google done")
+
 session, first_page_soup, payload = first_session()
 
 
