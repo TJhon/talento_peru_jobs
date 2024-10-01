@@ -6,7 +6,7 @@ import re
 
 def job_wage_float(wage: str):
     # 'S/. 1,950.00' -> 1950.00
-    wage = wage.replace(",", "").replace("S/.").strip()
+    wage = wage.replace(",", "").replace("S/.", "").strip()
     return float(wage)
 
 

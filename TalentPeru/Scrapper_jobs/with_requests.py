@@ -11,6 +11,7 @@ from .utils import (
     goto_next_page_payload,
     goto_last_page_payload,
     goto_prev_page_payload,
+    job_wage_float,
 )
 from .global_env import URL, HEADERS, PAYLOAD
 
@@ -112,7 +113,9 @@ def convert_in_df(html_page) -> pd.DataFrame:
             "end_date",
         ],
     )
-
+    # data["wage"] = data["wage"].apply(job_wage_float)
+    # data[["departamento", "distrito"]] = data["ubication"].str.split("-", expand=True)
+    # data["institution"] = data["institution"].apply(lambda x: x.title().strip())
     return data
 
 
@@ -152,28 +155,35 @@ def go_prev_page(view_state_value, dep, session) -> pd.DataFrame:
     return data_souper(prev_page_reg)
 
 
-def left_to_rigth(view_state_value, dep, session):
+def left_to_rigth(view_state_value, dep, session, right=False):
     # Scrappea los datos desde la primera pagina, siguiente pagian ...
     data, n, total = go_first_page(view_state_value, dep, session)
 
     data_list = [data]
+    if right:
+        total = int(total / 2) + 1
 
     for n in tqdm(range(total - 1)):
-        data, n_i, _ = go_next_page(view_state_value, dep, session)
-        data_list.append(data)
+        try:
+            data, n_i, _ = go_next_page(view_state_value, dep, session)
+            data_list.append(data)
+        except:
+            pass
 
     return pd.concat(data_list, ignore_index=True)
 
 
-def right_to_left(view_state_value, dep, session):
+def right_to_left(view_state_value, dep, session, left=True):
     # Scrapea los datos desde la primera pagina, va a la ultima pagina, y de ahi previa pagina
     data, n, total = go_first_page(view_state_value, dep, session)
-    data_list = [data]
-    data, n, total = go_last_page(view_state_value, dep, session)
 
-    data_list.append(data)
+    data, n, total = go_last_page(view_state_value, dep, session)
+    data_list = [data]
+
+    if left:
+        total = int(total / 2) + 2
+
     for n in tqdm(range(total - 2)):
-        # for n in tqdm(range(1)):
         data, n_i, _ = go_prev_page(view_state_value, dep, session)
         data_list.append(data)
 
