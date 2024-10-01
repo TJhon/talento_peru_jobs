@@ -95,7 +95,7 @@ def convert_in_df(html_page):
     return data
 
 
-algo = requests.get("google.com")
+algo = requests.get("https://cat-fact.herokuapp.com")
 print(algo.status_code)
 print("google done")
 
@@ -107,4 +107,4 @@ _, total = total_numbers(text_page_numbers)
 data1 = convert_in_df(first_page_soup)
 print(total / 60)
 print(data1)
-get_data_next_page(session, payload, 3)
+get_data_next_page(session, payload, total)
