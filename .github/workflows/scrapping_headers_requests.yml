@@ -3,8 +3,7 @@ name: Python Scrapping with Requests
 on:
   push:
     branches:
-      - main
-      - v_requests
+      - "fail requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='app.servir.gob.pe', port=443): Read timed out. (read timeout=10)"
 
 jobs:
   selenium_job:
