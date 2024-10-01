@@ -1,48 +1,43 @@
 import requests
 import warnings
 import pandas as pd
+from rich import print
 from tqdm import tqdm
 from bs4 import BeautifulSoup as bsoup
-from .utils import limpiar_espacios, total_numbers
+from .utils import (
+    limpiar_espacios,
+    total_numbers,
+    goto_first_dep_page_payload,
+    goto_next_page_payload,
+    goto_last_page_payload,
+    goto_prev_page_payload,
+)
 from .global_env import URL, HEADERS, PAYLOAD
 
 warnings.filterwarnings("ignore")
 
-cookies = {
-    "JSESSIONID": "AfLN1NxlepP0QpGSuesFamCh.node31",
-    "_ga": "GA1.3.1210958502.1727727309",
-    "_gid": "GA1.3.1263883292.1727727309",
-}
 
-
-def get_payload(soup):
+def get_view_state(soup):
     view_state_input = soup.find("input", {"name": "javax.faces.ViewState"})
     view_state_value = view_state_input["value"]
-    PAYLOAD["javax.faces.ViewState"] = view_state_value
-    return PAYLOAD
+
+    return view_state_value
 
 
 def first_session(url=URL, head=HEADERS):
 
     session = requests.Session()
 
-    proxy = {"ip": "67.43.236.19", "port": "17293"}
-
-    p = {
-        "http": f"http://{proxy['ip']}:{proxy['port']}",
-        "https": f"http://{proxy['ip']}:{proxy['port']}",
-    }
-
-    fp_request = session.get(url, headers=head, cookies=cookies, proxies=p, timeout=10)
+    fp_request = session.get(url, headers=head)
 
     fp_page_soup = bsoup(fp_request.content, features="lxml")
-    payload = get_payload(fp_page_soup)
-    return session, fp_page_soup, payload
+    view_state_value = get_view_state(fp_page_soup)
+    return session, fp_page_soup, view_state_value
 
 
-def next_page(data: dict, session: requests.Session):
-    result_next_page = session.post(url=URL, headers=HEADERS, data=data).content
-    return result_next_page
+def goto_page(data: dict, session: requests.Session):
+    result_page = session.post(url=URL, headers=HEADERS, data=data).content
+    return result_page
 
 
 def souper(content_html):
@@ -73,18 +68,31 @@ def get_info_jobs(job_n):
     return [position] + info
 
 
-def get_data_next_page(session, payload, last_number_page=100):
+def data_in_page_f(session, payload):
+    content_html = goto_page(session=session, data=payload)
 
+    html_page = souper(content_html)
+    numbers = get_label_page(html_page)
+    _, total = total_numbers(numbers)
+    data_in_page = convert_in_df(html_page)
+    return data_in_page, total
+
+
+def get_data_next_page(session, payload, last_number_page=None):
+    data = []
+
+    html, total_pages = data_in_page_f()
+    if last_number_page is None:
+        last_number_page = total_pages
+    print(last_number_page)
     for num_page in tqdm(range(last_number_page - 1)):
-        # while n <= last_number_page:
-        content_html = next_page(session=session, data=payload)
 
-        html_page = souper(content_html)
-        data = convert_in_df(html_page)
-        # print(data)
+        data_in_page, _ = data_in_page_f()
+        data.append(data_in_page)
+    return pd.concat(data)
 
 
-def convert_in_df(html_page):
+def convert_in_df(html_page) -> pd.DataFrame:
     jobs = find_jobs(html_page)  # all jobs
     info_jobs = []
 
@@ -108,16 +116,65 @@ def convert_in_df(html_page):
     return data
 
 
-algo = requests.get("https://cat-fact.herokuapp.com")
-print(algo.status_code)
-print("google done")
-
-session, first_page_soup, payload = first_session()
+# Logica: Primera pagina, siguiente pagina, ultima pagina (pequenos datos)
+# logica: primera pagina, (siguiente pagina -> hasta encontrarse, ultima pagina -> previa pagina hasta encontrarse)
 
 
-text_page_numbers = get_label_page(first_page_soup)
-_, total = total_numbers(text_page_numbers)
-data1 = convert_in_df(first_page_soup)
-print(total / 60)
-print(data1)
-get_data_next_page(session, payload, total)
+def data_souper(page_content):
+    html_ = souper(page_content)
+    page_n = get_label_page(html_)
+    actual, total = total_numbers(page_n)
+    data = convert_in_df(html_)
+    return data, actual, total
+
+
+def go_first_page(view_state_value, dep, session) -> pd.DataFrame:
+    first_page_payload = goto_first_dep_page_payload(view_state_value, dep)
+    first_page_reg = goto_page(first_page_payload, session)
+    return data_souper(first_page_reg)
+
+
+def go_last_page(view_state_value, dep, session) -> pd.DataFrame:
+    last_page_payload = goto_last_page_payload(view_state_value, dep)
+    last_page_reg = goto_page(data=last_page_payload, session=session)
+    return data_souper(last_page_reg)
+
+
+def go_next_page(view_state_value, dep, session) -> pd.DataFrame:
+    next_page_payload = goto_next_page_payload(view_state_value, dep)
+    next_page_reg = goto_page(data=next_page_payload, session=session)
+    return data_souper(next_page_reg)
+
+
+def go_prev_page(view_state_value, dep, session) -> pd.DataFrame:
+    prev_page_payload = goto_prev_page_payload(view_state_value, dep)
+    prev_page_reg = goto_page(data=prev_page_payload, session=session)
+    return data_souper(prev_page_reg)
+
+
+def left_to_rigth(view_state_value, dep, session):
+    # Scrappea los datos desde la primera pagina, siguiente pagian ...
+    data, n, total = go_first_page(view_state_value, dep, session)
+
+    data_list = [data]
+
+    for n in tqdm(range(total - 1)):
+        data, n_i, _ = go_next_page(view_state_value, dep, session)
+        data_list.append(data)
+
+    return pd.concat(data_list, ignore_index=True)
+
+
+def right_to_left(view_state_value, dep, session):
+    # Scrapea los datos desde la primera pagina, va a la ultima pagina, y de ahi previa pagina
+    data, n, total = go_first_page(view_state_value, dep, session)
+    data_list = [data]
+    data, n, total = go_last_page(view_state_value, dep, session)
+
+    data_list.append(data)
+    for n in tqdm(range(total - 2)):
+        # for n in tqdm(range(1)):
+        data, n_i, _ = go_prev_page(view_state_value, dep, session)
+        data_list.append(data)
+
+    return pd.concat(data_list, ignore_index=True)

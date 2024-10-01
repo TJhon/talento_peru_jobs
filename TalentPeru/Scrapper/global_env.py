@@ -1,4 +1,6 @@
 # global_env.py
+from rich import print
+
 URL = "https://app.servir.gob.pe/DifusionOfertasExterno/faces/consultas/ofertas_laborales.xhtml"
 # HEADERS = {
 #     "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36",
@@ -33,3 +35,48 @@ PAYLOAD = {
     "frmLstOfertsLabo:autocompletar_hinput": "",
     "frmLstOfertsLabo:txtNroConv": "",
 }
+
+
+share_payload = {
+    "javax.faces.partial.ajax": "true",
+    "javax.faces.partial.execute": "@all",
+    "javax.faces.partial.render": "frmLstOfertsLabo:mensaje frmLstOfertsLabo",
+    "frmLstOfertsLabo": "frmLstOfertsLabo",
+    "frmLstOfertsLabo:modalidadAcceso": "03",
+    "frmLstOfertsLabo:txtPerfil": "",
+    "frmLstOfertsLabo:cboDep_focus": "",
+    "frmLstOfertsLabo:txtPuesto": "",
+    "frmLstOfertsLabo:autocompletar_input": "",
+    "frmLstOfertsLabo:autocompletar_hinput": "",
+    "frmLstOfertsLabo:txtNroConv": "",
+}
+
+# falta el view State
+# lima 15
+
+first_page = {
+    "javax.faces.source": "frmLstOfertsLabo:j_idt42",
+    "frmLstOfertsLabo:j_idt42": "frmLstOfertsLabo:j_idt42",
+}
+next_page = {
+    "javax.faces.source": "frmLstOfertsLabo:j_idt56",
+    "frmLstOfertsLabo:j_idt56": "frmLstOfertsLabo:j_idt56",
+}
+
+last_page = {
+    "javax.faces.source": "frmLstOfertsLabo:j_idt57",
+    "frmLstOfertsLabo:j_idt57": "frmLstOfertsLabo:j_idt57",
+}
+prev_page = {
+    "javax.faces.source": "frmLstOfertsLabo:j_idt54",
+    "frmLstOfertsLabo:j_idt54": "frmLstOfertsLabo:j_idt54",
+}
+
+
+dep = "01"
+view_state_value = "12345678901234567890123456789012"
+
+# print(goto_first_page_payload(view_state_value, dep))
+# print(goto_next_page_payload(view_state_value, dep))
+# print(goto_last_page_payload(view_state_value, dep))
+# print(goto_prev_page_payload(view_state_value, dep))
