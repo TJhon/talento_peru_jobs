@@ -1,28 +1,49 @@
-import streamlit as st
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
-import time
-from TalentPeru import last_scrapper
+
+# from TalentPeru.Scrapper_jobs.utils import job_wage_float
+from TalentPeru.Scrapper_jobs.api_jobs import (
+    get_jobs_data,
+    get_last_jobs_data,
+    get_logs,
+)
 
 
-@st.cache_data
-def load_data():
-    df = last_scrapper()
-    df["payment"] = (
-        df["payment"].str.replace("S/. ", "").str.replace(",", "").astype(float)
-    )
+app = FastAPI()
 
-    return df
+origins = [
+    "http://localhost:5173",
+    "http://192.168.1.3",
+    "http://192.168.1.3:5173",
+]
 
-
-data = load_data()
-
-departamentos = data["dep"].unique()
-
-
-st.title("Trabajos ")
-
-st.write(departamentos)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
-def update_input_state():
-    st.session_state.input_changed = True
+# @app.get("/interns")
+# @app.get("/direct_jobs")
+@app.get("/jobs/last")
+async def get_jobs():
+    return get_last_jobs_data()
+
+
+@app.get("/jobs/logs")
+async def get_logs_api():
+    return get_logs()
+
+
+@app.get("/jobs/history/{date}")
+async def get_job_history(date: str):
+    return get_jobs_data(date)
+
+
+@app.get("/")
+def check():
+    return {"hello": "world"}
