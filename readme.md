@@ -23,6 +23,6 @@ uvicorn app:app --reload
     - [ ] Usar las paginas de convocatoria de cada institucion - (ideal)
 - [ ] Api: Fast API
   - [ ] Documentacion
-- [ ] Metricas
+- [ ] Metricas - Analisis de datos
 - [ ] DataFrame format
 - [ ] Web App
