@@ -15,8 +15,11 @@ def get_logs():
     last_scrapper = df_logs.sort_values(last_date_col, ascending=False).head(1)
     data = {
         "last_scrapper_date": last_scrapper.to_dict("records")[0]["last_date"],
-        "data": df_logs.to_dict("records"),
-        "dates": df_logs["last_date"].values,
+        "origin": LOGS,
+        # "data": df_logs.to_dict("records"),
+        "dates": list(df_logs["last_date"].unique()),
+        # "dates": df_logs.to_dict("list")["last_date"],
+        # }
     }
 
     return data
@@ -54,6 +57,3 @@ def get_last_jobs_data():
     last_date = get_logs()["last_scrapper_date"]
     data = get_jobs_data(last_date)
     return data
-
-
-# get_last_data()

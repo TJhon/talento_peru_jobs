@@ -26,6 +26,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+from rich import print
+
 
 # @app.get("/interns")
 # @app.get("/direct_jobs")
@@ -37,6 +39,9 @@ async def get_jobs():
 @app.get("/jobs/logs")
 async def get_logs_api():
     return get_logs()
+
+
+# print(get_logs())
 
 
 @app.get("/jobs/history/{date}")
