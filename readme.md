@@ -15,6 +15,19 @@ python main.py
 uvicorn app:app --reload
 ```
 
+### Metodos
+
+```python
+URL = "https://talento-peru-jobs-kibob9qxx-tjhons-projects.vercel.app/"
+# ultimos datos registrados
+/jobs/last
+# Registro de datos de scrapeos
+/jobs/logs
+# Datos por fecha
+jobs/history/02-10-2024
+```
+
+
 # TODO:
 
 - [ ] Scrappear datos
