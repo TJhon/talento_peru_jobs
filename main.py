@@ -74,6 +74,7 @@ if __name__ == "__main__":
             data_dep_list.append(future.result())
 
     data = pd.concat(data_dep_list, ignore_index=True)
+    data["id_uuid"] = data.apply(lambda row: uuid.uuid4(), axis=1)
     data.to_csv(data_path, index=False)
     last_log = pd.read_csv(PATH_LOG)
     end = time() - start
