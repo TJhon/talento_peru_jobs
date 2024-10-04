@@ -41,7 +41,7 @@ def clean_jobs_data(data: pd.DataFrame):
     for cl in str_columns:
         data[cl] = data[cl].str.strip().str.title()
 
-    data = data.reset_index(names=["id"])
+    # data = data.reset_index(names=["id"])
     return data
 
 

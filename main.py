@@ -7,7 +7,7 @@ from TalentPeru.Scrapper_jobs.with_requests import (
 from time import time
 import pandas as pd
 import pytz, subprocess
-import datetime
+import datetime, uuid
 
 gmt5 = pytz.timezone("Etc/GMT+5")
 today = datetime.datetime.now(gmt5).strftime("%d-%m-%Y")
@@ -85,9 +85,9 @@ if __name__ == "__main__":
         "n_jobs": [len(data) - 10],
         "time": [end],
     }
-    pd.concat([last_log, pd.DataFrame(data_log)], ignore_index=True).to_csv(
-        PATH_LOG, index=False
-    )
+    day_data = pd.concat([last_log, pd.DataFrame(data_log)], ignore_index=True)
+    day_data["id_uuid"] = day_data.apply(lambda row: uuid.uuid4(), axis=1)
+    day_data.to_csv(PATH_LOG, index=False)
     run_git_commands(end)
 
     print(f"Tiempo de ejecución: {end } segundos")
