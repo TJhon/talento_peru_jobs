@@ -32,6 +32,7 @@ jobs/history/02-10-2024
 
 - [ ] Scrappear datos
   - [x] Datos Generales
+  - [ ] Instituciones del estado -> https://www.datosabiertos.gob.pe/sites/default/files/ds_lista_entidades_4.csv
   - [ ] Detalles
     - [ ] Usar las paginas de convocatoria de cada institucion - (ideal)
 - [ ] Api: Fast API
