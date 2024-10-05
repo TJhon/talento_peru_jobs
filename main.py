@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
     data_dep_list = []
 
-    with ThreadPoolExecutor(max_workers=13) as executor:
+    with ThreadPoolExecutor(max_workers=10) as executor:
         future_to_dep = {executor.submit(ejecutar, dep): dep for dep in deps}
 
         for future in as_completed(future_to_dep):
