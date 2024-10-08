@@ -39,7 +39,7 @@ def clean_jobs_data(data: pd.DataFrame):
         "num_conv",
     ]
     for cl in str_columns:
-        data[cl] = data[cl].str.strip().str.title()
+        data[cl] = data[cl].str.strip()
 
     # data = data.reset_index(names=["id"])
     return data
