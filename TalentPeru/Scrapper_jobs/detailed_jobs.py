@@ -2,10 +2,11 @@ import re
 import uuid
 from bs4 import BeautifulSoup
 import requests
-import numpy as np
-import warnings
+import math
+import pandas as pd
+import warnings, tqdm
 
-from .global_env import URL, HEADERS, PAYLOAD
+from .global_env import URL, HEADERS, depa_value
 from .utils import (
     goto_dep_payload,
     goto_first_dep_page_payload,
@@ -22,6 +23,13 @@ def remove_extra_spaces(text):
     return re.sub(r"\s+", " ", text).strip()
 
 
+def paginator(texto: str):
+    # Expresión regular para encontrar secuencias de dígitos
+    numeros = re.findall(r"\d+", texto)
+
+    return [int(num) for num in numeros]
+
+
 class JobScrapper:
     def __init__(
         self,
@@ -32,18 +40,85 @@ class JobScrapper:
         self.url = url
         self.headers = headers
         self.dep = dep
+        # Obtenenmos la session y el valor de view_value
         self.first_session()
-        self.go_first_page()
-        self.data = []
+        # vamos a la primera pagina del departamento
+        self.soup = self.go_first_page()
+        # obtenemos el total de paginas existentes
+        self.get_label_page()
+
         self.scrapper_fn = JobScraperDetails(
             view_value=self.view_state_value, session=self.session
         )
+        self.data = []
 
     def scrapper_page(self, n=10) -> list:
-        detail_scrapper = self.scrapper_fn.get_details_data_in_page(n)
+        try:
+            detail_scrapper = self.scrapper_fn.get_details_data_in_page(n)
 
-        self.data.append(detail_scrapper)
-        return self
+            self.data.append(detail_scrapper)
+            return detail_scrapper
+        except:
+            pass
+
+    def scrapper_seq(self, iteration_total, change_page, side=None):
+        dep = self.dep
+        name_depa = depa_value[dep].title()
+        name_description = f"Departamento de {name_depa} "
+        if side is not None:
+            name_description = f"Departamento de {name_depa} - {side}"
+        for _ in tqdm.tqdm(range(iteration_total), desc=name_description):
+            page_content_jobs = change_page()
+            jobs = page_content_jobs.find_all("div", class_="cuadro-vacantes")
+            n_jobs = len(jobs)
+            # print(n_jobs)
+            self.scrapper_page(n_jobs)
+
+    def get_data(self):
+        return pd.concat(self.data, ignore_index=True)
+
+    def scrapper_sequential(self):
+        total_pages = self.total_pages
+        self.scrapper_page()
+        n_discount = 1
+
+        iteration_total = total_pages - n_discount
+        change_page = self.go_next_page
+        self.scrapper_seq(iteration_total, change_page)
+        return self.get_data()
+
+    def scrapper_both_left(self):
+        self.scrapper_page()
+        change_page = self.go_next_page
+
+        total_pages = self.total_pages
+        n_discount = 2
+        iteration_total = math.floor((total_pages - n_discount) / 2)
+
+        self.scrapper_seq(iteration_total, change_page, side="izquierda a derecha")
+        return self.get_data()
+
+    def scrapper_both_right(self):
+        page_content_jobs = self.go_last_page()
+        jobs = page_content_jobs.find_all("div", class_="cuadro-vacantes")
+        n_jobs = len(jobs)
+        self.scrapper_page(n_jobs)
+        change_page = self.go_prev_page
+
+        total_pages = self.total_pages
+        n_discount = 2
+        iteration_total = math.ceil((total_pages - n_discount) / 2)
+
+        self.scrapper_seq(iteration_total, change_page, side="derecha a izquierda")
+        return self.get_data()
+
+    # @staticmethod
+    def get_label_page(self):
+
+        page_n = self.soup.find("label", class_="control-label btn-paginator-cnt").text
+        actual_page, last_page = paginator(page_n)
+        self.total_pages = last_page
+        return page_n
 
     @staticmethod
     def get_view_state(soup):
@@ -60,6 +135,7 @@ class JobScrapper:
         view_state_vale = self.get_view_state(fp_soup)
         self.session = session
         self.view_state_value = view_state_vale
+        # self.soup = fp_soup
         return self
 
     def goto_page(self, data: dict):
@@ -74,24 +150,27 @@ class JobScrapper:
             self.view_state_value, self.dep
         )
         first_page_reg = self.goto_page(first_page_payload)
-        return first_page_reg
+        return BeautifulSoup(first_page_reg, features="lxml")
 
     def go_next_page(self):
         next_page_payload = goto_next_page_payload(self.view_state_value, self.dep)
         next_page_reg = self.goto_page(next_page_payload)
-        return next_page_reg
+        return BeautifulSoup(next_page_reg)
 
     def go_last_page(self):
         last_page_payload = goto_last_page_payload(self.view_state_value, self.dep)
         last_page_reg = self.goto_page(last_page_payload)
-        return last_page_reg
+        return BeautifulSoup(last_page_reg)
 
     def go_prev_page(self):
         prev_page_payload = goto_prev_page_payload(self.view_state_value, self.dep)
         prev_page_reg = self.goto_page(prev_page_payload)
-        return prev_page_reg
+        return BeautifulSoup(prev_page_reg)
 
     # def
+
+
+import pandas as pd
 
 
 class JobScraperDetails:
@@ -192,7 +271,9 @@ class JobScraperDetails:
             soup_i = BeautifulSoup(self.get_n_job_description(i).content, "html.parser")
             result_i = self.get_details_data(soup_i)
             data_in_page.append(result_i)
-        return data_in_page
+        data = pd.DataFrame(data_in_page)
+
+        return data
 
     def remove_extra_spaces(self, text):
         """Función auxiliar para limpiar espacios extra."""
