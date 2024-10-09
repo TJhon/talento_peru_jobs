@@ -1,6 +1,20 @@
 import re
 import uuid
 from bs4 import BeautifulSoup
+import requests
+import numpy as np
+import warnings
+
+from .global_env import URL, HEADERS, PAYLOAD
+from .utils import (
+    goto_dep_payload,
+    goto_first_dep_page_payload,
+    goto_last_page_payload,
+    goto_next_page_payload,
+    goto_prev_page_payload,
+)
+
+warnings.filterwarnings("ignore")
 
 
 def remove_extra_spaces(text):
@@ -8,11 +22,85 @@ def remove_extra_spaces(text):
     return re.sub(r"\s+", " ", text).strip()
 
 
-class JobScraper:
-    def __init__(self, view_value, session, n=10):
+class JobScrapper:
+    def __init__(
+        self,
+        dep="01",
+        url=URL,
+        headers=HEADERS,
+    ):
+        self.url = url
+        self.headers = headers
+        self.dep = dep
+        self.first_session()
+        self.go_first_page()
+        self.data = []
+        self.scrapper_fn = JobScraperDetails(
+            view_value=self.view_state_value, session=self.session
+        )
+
+    def scrapper_page(self, n=10) -> list:
+        detail_scrapper = self.scrapper_fn.get_details_data_in_page(n)
+
+        self.data.append(detail_scrapper)
+        return self
+
+    @staticmethod
+    def get_view_state(soup):
+        """Obtiene el valor del view state del HTML."""
+        view_state_input = soup.find("input", {"name": "javax.faces.ViewState"})
+        view_state_value = view_state_input["value"]
+        return view_state_value
+
+    def first_session(self):
+        session = requests.Session()
+        fp_requests = session.get(self.url, headers=self.headers)
+        # Es la pagina que se muestra al cargar no es relevante por el momento
+        fp_soup = BeautifulSoup(fp_requests.content, features="lxml")
+        view_state_vale = self.get_view_state(fp_soup)
+        self.session = session
+        self.view_state_value = view_state_vale
+        return self
+
+    def goto_page(self, data: dict):
+        """Realiza una petición POST para navegar entre páginas. Retorna un Html"""
+        result_page = self.session.post(
+            url=self.url, headers=self.headers, data=data
+        ).content
+        return result_page
+
+    def go_first_page(self):
+        first_page_payload = goto_first_dep_page_payload(
+            self.view_state_value, self.dep
+        )
+        first_page_reg = self.goto_page(first_page_payload)
+        return first_page_reg
+
+    def go_next_page(self):
+        next_page_payload = goto_next_page_payload(self.view_state_value, self.dep)
+        next_page_reg = self.goto_page(next_page_payload)
+        return next_page_reg
+
+    def go_last_page(self):
+        last_page_payload = goto_last_page_payload(self.view_state_value, self.dep)
+        last_page_reg = self.goto_page(last_page_payload)
+        return last_page_reg
+
+    def go_prev_page(self):
+        prev_page_payload = goto_prev_page_payload(self.view_state_value, self.dep)
+        prev_page_reg = self.goto_page(prev_page_payload)
+        return prev_page_reg
+
+    # def
+
+
+class JobScraperDetails:
+    # No depende del html presentado en la carga, si no se basa en como funciona
+    # la pagina principal -> hace un post a la pagina principal con el id que se requiere
+    # luego hace un requests del detail
+    def __init__(self, view_value, session):
         self.view_value = view_value
         self.session = session
-        self.n = n
 
     def get_n_job_description(self, job_n):
         headers = {
@@ -98,9 +186,9 @@ class JobScraper:
 
         return job_more_details
 
-    def get_details_data_in_page(self):
+    def get_details_data_in_page(self, n) -> list:
         data_in_page = []
-        for i in range(self.n):
+        for i in range(n):
             soup_i = BeautifulSoup(self.get_n_job_description(i).content, "html.parser")
             result_i = self.get_details_data(soup_i)
             data_in_page.append(result_i)
