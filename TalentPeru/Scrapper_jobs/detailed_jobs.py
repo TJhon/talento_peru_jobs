@@ -79,7 +79,7 @@ class JobScrapper:
 
     def scrapper_sequential(self):
         total_pages = self.total_pages
-        self.scrapper_page()
+        self.scrapper_page()  # primera pagian
         n_discount = 1
 
         iteration_total = total_pages - n_discount
