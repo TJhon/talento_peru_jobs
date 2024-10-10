@@ -20,6 +20,25 @@ PATH_LOG = "./data_logs/logs.csv"
 data_path = f"./data/all/{today}.csv"
 
 
+columns = {
+    "url_convocatoria": "job_posting_url",
+    "Cantidad De Vacantes:": "vacancies",
+    "Número De Convocatoria:": "job_posting_number",
+    "Remuneración:": "salary",
+    "Fecha Inicio De Publicación:": "start_publication_date",
+    "Fecha Fin De Publicación:": "end_publication_date",
+    "Experiencia:": "required_experience",
+    "Formación Académica - Perfil:": "educational_background",
+    "Especialización:": "specialization",
+    "Conocimiento:": "required_knowledge",
+    "Competencias:": "skills",
+    "position": "job_title",
+    "institution": "public_institution",
+    "uuid": "unique_id",
+    "day_scrapper": "scraping_date",
+}
+
+
 def run_git_commands(total_time):
 
     subprocess.run(["git", "add", "-A"], check=True)
@@ -64,8 +83,10 @@ if __name__ == "__main__":
         for future in as_completed(future_to_dep):
             data_dep_list.append(future.result())
 
+    print("\n" * 10)
     data = pd.concat(data_dep_list, ignore_index=True).drop_duplicates()
     data["day_scrapper"] = today
+    data = data.rename(columns=columns)
 
     data.to_csv(data_path, index=False)
     last_log = pd.read_csv(PATH_LOG)
