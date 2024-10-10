@@ -8,7 +8,7 @@ from TalentPeru.Scrapper_jobs.api_jobs import (
     get_last_jobs_data,
     # get_logs,
 )
-from TalentAPI.init_supabase import get_logs, get_log_date
+from TalentAPI.init_supabase import get_logs, get_log_date, get_jobs_data
 
 app = FastAPI()
 
@@ -32,9 +32,9 @@ from rich import print
 
 # @app.get("/interns")
 # @app.get("/direct_jobs")
-@app.get("/jobs/last")
+@app.get("/jobs/last/{date}")
 async def get_jobs():
-    return get_last_jobs_data()
+    return get_jobs_data()
 
 
 @app.get("/jobs/logs")

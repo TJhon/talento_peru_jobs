@@ -36,7 +36,7 @@ def upload_and_drop_data(data):
     )
 
     data_table.insert(data_r).execute()
-    # supabase.table("test").insert({"id": 1000000}).execute()
+
     response = supabase.auth.sign_out()
 
 
@@ -76,22 +76,11 @@ def get_log_date(date):
     return {"date": str(date), "n_jobs": int(n_jobs)}
 
 
-# except:
-#     return {"404": "Date not found"}
-
-
 def get_jobs_data(date):
     if date not in get_logs()["dates"]:
         return {"error": "date not found in DB, see '/jobs/logs'"}
-    # data_table.select("*")
+    data = data_table.select("*").eq("scraping_date", date).execute()
+    return data.data
     # data = pd.read_csv(URL_BASE.format(date=date))
     # data = clean_jobs_data(data)
     # return data.to_dict("records")
-
-
-# def
-
-
-# response = supabase.table("test").delete().in_("id", [100, 1021]).execute()
-# print(response)
-# print("12")
