@@ -1,139 +1,155 @@
 dep,last_date,path_data,n_jobs,n_jobs_text,time,id_uuid
-amazonas,24-09-2024,/data/amazonas/24-09-2024.csv,52,52 puesto(s) encontrado(s) en total.,,de47a644-3b83-4ec9-9e08-868114909f7f
-ancash,24-09-2024,/data/ancash/24-09-2024.csv,79,79 puesto(s) encontrado(s) en total.,,b4a43718-14b4-4668-96ea-fb04d4dbd7fd
-junin,24-09-2024,/data/junin/24-09-2024.csv,250,250 puesto(s) encontrado(s) en total.,,4f268dc9-14d7-4e23-9d0c-9dc30e6f2231
-apurimac,24-09-2024,/data/apurimac/24-09-2024.csv,113,113 puesto(s) encontrado(s) en total.,,983dc813-d4dc-4a80-a053-6c6240222423
-la_libertad,24-09-2024,/data/la_libertad/24-09-2024.csv,234,234 puesto(s) encontrado(s) en total.,,a8c6babb-085d-48d8-ac39-3ab2ec1dabb6
-arequipa,24-09-2024,/data/arequipa/24-09-2024.csv,210,210 puesto(s) encontrado(s) en total.,,33afac81-0f42-475c-8fdd-336231a057c6
-lambayeque,24-09-2024,/data/lambayeque/24-09-2024.csv,54,54 puesto(s) encontrado(s) en total.,,c7e2bb89-d15a-4bdc-9ad2-7ad26c6f4c70
-ayacucho,24-09-2024,/data/ayacucho/24-09-2024.csv,85,85 puesto(s) encontrado(s) en total.,,e2b58106-804f-4757-9017-1671ccd1affc
-cajamarca,24-09-2024,/data/cajamarca/24-09-2024.csv,186,186 puesto(s) encontrado(s) en total.,,454be2f6-940d-4337-b7df-bf42c50e7f61
-callao,24-09-2024,/data/callao/24-09-2024.csv,64,64 puesto(s) encontrado(s) en total.,,9c600481-0b4e-4fa8-8d90-fe93693bdf11
-cusco,24-09-2024,/data/cusco/24-09-2024.csv,276,276 puesto(s) encontrado(s) en total.,,f5793f0d-b49d-46f9-841a-bc43d18594ee
-huancavelica,24-09-2024,/data/huancavelica/24-09-2024.csv,111,111 puesto(s) encontrado(s) en total.,,cf86fb0e-6102-4f00-acfc-18ec62605e80
-huanuco,24-09-2024,/data/huanuco/24-09-2024.csv,163,163 puesto(s) encontrado(s) en total.,,1b3c2bd6-6620-4fe4-90fb-bd793cb2d5c5
-ica,24-09-2024,/data/ica/24-09-2024.csv,55,55 puesto(s) encontrado(s) en total.,,dc92f112-3925-45b2-a5fc-02e7fe090c5d
-lima,24-09-2024,/data/lima/24-09-2024.csv,1274,1274 puesto(s) encontrado(s) en total.,,fca22d16-09e2-4a73-a228-15b1a2df3526
-loreto,24-09-2024,/data/loreto/24-09-2024.csv,62,62 puesto(s) encontrado(s) en total.,,8a68e3bd-2cc5-4ab0-bbeb-5e88e77a3a87
-madre_de_dios,24-09-2024,/data/madre_de_dios/24-09-2024.csv,28,28 puesto(s) encontrado(s) en total.,,caeb66ad-1157-48e0-9b31-5f768f6df5a8
-moquegua,24-09-2024,/data/moquegua/24-09-2024.csv,33,33 puesto(s) encontrado(s) en total.,,9096e09d-e776-4bb9-89cb-ab9f1b0cb976
-junin,24-09-2024,/data/junin/24-09-2024.csv,250,250 puesto(s) encontrado(s) en total.,,73a72ad4-2fbe-4547-b47f-37ed11942a6d
-pasco,24-09-2024,/data/pasco/24-09-2024.csv,64,64 puesto(s) encontrado(s) en total.,,018a2dd4-7198-4ffe-b132-7bdd41d0b66d
-piura,24-09-2024,/data/piura/24-09-2024.csv,44,44 puesto(s) encontrado(s) en total.,,06bbf65f-a9e2-4cac-90ac-766feab980e0
-puno,24-09-2024,/data/puno/24-09-2024.csv,153,153 puesto(s) encontrado(s) en total.,,8f94ec98-30d6-4ddf-ad2f-4618b4b57a06
-san_martin,24-09-2024,/data/san_martin/24-09-2024.csv,35,35 puesto(s) encontrado(s) en total.,,e5ba1c77-4eb2-4e02-b211-7eedce7ddbff
-tacna,24-09-2024,/data/tacna/24-09-2024.csv,66,66 puesto(s) encontrado(s) en total.,,66604663-f750-4579-9d86-f85371113f60
-tumbes,24-09-2024,/data/tumbes/24-09-2024.csv,23,23 puesto(s) encontrado(s) en total.,,3fadce85-0070-4649-956e-1faa70375d07
-ucayali,24-09-2024,/data/ucayali/24-09-2024.csv,171,171 puesto(s) encontrado(s) en total.,,96ce27dc-2a93-4155-8723-09816c76c715
-amazonas,25-09-2024,/data/amazonas/25-09-2024.csv,52,52 puesto(s) encontrado(s) en total.,,41fd40cb-a290-4efc-a85f-fcfab5f31dd2
-ancash,25-09-2024,/data/ancash/25-09-2024.csv,79,79 puesto(s) encontrado(s) en total.,,d62c591c-3074-4da2-97c8-44106813ab3c
-apurimac,25-09-2024,/data/apurimac/25-09-2024.csv,120,120 puesto(s) encontrado(s) en total.,,51162b5c-4f3b-42db-9469-5889beb76c0c
-junin,25-09-2024,/data/junin/25-09-2024.csv,240,240 puesto(s) encontrado(s) en total.,,a3d448ed-3b04-47dd-9f17-8dc6c3cd2459
-arequipa,25-09-2024,/data/arequipa/25-09-2024.csv,205,205 puesto(s) encontrado(s) en total.,,86604025-d9cf-4d1a-b717-72d5ede281d7
-la_libertad,25-09-2024,/data/la_libertad/25-09-2024.csv,234,234 puesto(s) encontrado(s) en total.,,ec25aeb7-478e-465f-bad4-680a8e6c5e45
-lambayeque,25-09-2024,/data/lambayeque/25-09-2024.csv,53,53 puesto(s) encontrado(s) en total.,,b19ee0db-2223-4812-b6d6-015e2fef7728
-ayacucho,25-09-2024,/data/ayacucho/25-09-2024.csv,81,81 puesto(s) encontrado(s) en total.,,c314ec5e-06fa-4e26-9f57-91606477cd7c
-loreto,25-09-2024,/data/loreto/25-09-2024.csv,67,67 puesto(s) encontrado(s) en total.,,5f0a9f62-0ecb-438b-86fa-3ec3e2da23f8
-cajamarca,25-09-2024,/data/cajamarca/25-09-2024.csv,167,167 puesto(s) encontrado(s) en total.,,b645f53d-c509-44ad-8687-86fc1bcf1bd1
-madre_de_dios,25-09-2024,/data/madre_de_dios/25-09-2024.csv,25,25 puesto(s) encontrado(s) en total.,,654ffaab-d7bc-4c17-bf90-beac637b0d4b
-moquegua,25-09-2024,/data/moquegua/25-09-2024.csv,34,34 puesto(s) encontrado(s) en total.,,4d200fc3-b472-4870-b84c-8f8a46643aa4
-callao,25-09-2024,/data/callao/25-09-2024.csv,57,57 puesto(s) encontrado(s) en total.,,a53328f3-a9ec-4c35-a2c2-17c50c6faac6
-pasco,25-09-2024,/data/pasco/25-09-2024.csv,55,55 puesto(s) encontrado(s) en total.,,0080c803-62e0-4042-9844-5a553d9c57b2
-piura,25-09-2024,/data/piura/25-09-2024.csv,41,41 puesto(s) encontrado(s) en total.,,8afa1a9a-113e-484d-98a1-9cab1d35ca91
-cusco,25-09-2024,/data/cusco/25-09-2024.csv,224,224 puesto(s) encontrado(s) en total.,,b8848223-23fd-4323-bb07-9764765b87a0
-puno,25-09-2024,/data/puno/25-09-2024.csv,204,204 puesto(s) encontrado(s) en total.,,5ae8d479-a91e-43ef-b2da-bc09d8b7f6a2
-san_martin,25-09-2024,/data/san_martin/25-09-2024.csv,55,55 puesto(s) encontrado(s) en total.,,b39c71d7-09f4-4cde-a25f-b9eb02f3d3f6
-lima,25-09-2024,/data/lima/25-09-2024.csv,1326,1326 puesto(s) encontrado(s) en total.,,efb676e5-eb03-41a0-8e04-06120aaaaeb9
-tacna,25-09-2024,/data/tacna/25-09-2024.csv,65,65 puesto(s) encontrado(s) en total.,,a2383eaf-4714-4030-bc27-338c49cc093a
-tumbes,25-09-2024,/data/tumbes/25-09-2024.csv,20,20 puesto(s) encontrado(s) en total.,,05de24ff-a3c5-4304-9438-457eeed219fa
-huancavelica,25-09-2024,/data/huancavelica/25-09-2024.csv,115,115 puesto(s) encontrado(s) en total.,,f46c1706-6baa-46cb-ad37-5f7c44d397d8
-huanuco,25-09-2024,/data/huanuco/25-09-2024.csv,135,135 puesto(s) encontrado(s) en total.,,f25d41c2-4d2c-485f-a4cb-183ac065599e
-ica,25-09-2024,/data/ica/25-09-2024.csv,36,36 puesto(s) encontrado(s) en total.,,372cc933-ee22-4b23-9d86-56c3d3a3c303
-ucayali,25-09-2024,/data/ucayali/25-09-2024.csv,183,183 puesto(s) encontrado(s) en total.,,74db070d-f4ef-4f45-a826-d72f92a6575b
-junin,25-09-2024,/data/junin/25-09-2024.csv,240,240 puesto(s) encontrado(s) en total.,,af279e26-1d18-4755-aa96-f91010bdf47f
-amazonas,26-09-2024,/data/amazonas/26-09-2024.csv,47,47 puesto(s) encontrado(s) en total.,,f2f095be-ac23-4e1c-a821-a3dab5ca24e8
-ancash,26-09-2024,/data/ancash/26-09-2024.csv,44,44 puesto(s) encontrado(s) en total.,,d3e3846c-d7c7-47e2-8aac-69b7e7921d2d
-apurimac,26-09-2024,/data/apurimac/26-09-2024.csv,111,111 puesto(s) encontrado(s) en total.,,2f6d633f-ea1f-41dd-8b6c-4de2448ce45e
-junin,26-09-2024,/data/junin/26-09-2024.csv,245,245 puesto(s) encontrado(s) en total.,,382e0632-41c4-42cb-9e3d-0f053456e826
-arequipa,26-09-2024,/data/arequipa/26-09-2024.csv,206,206 puesto(s) encontrado(s) en total.,,9f207059-e71f-4d7c-baf3-df21429876b4
-la_libertad,26-09-2024,/data/la_libertad/26-09-2024.csv,234,234 puesto(s) encontrado(s) en total.,,706a2b2d-493f-4c5c-8826-8f1decbbdc26
-ayacucho,26-09-2024,/data/ayacucho/26-09-2024.csv,62,62 puesto(s) encontrado(s) en total.,,bf4e4951-36a5-4c7d-88f0-3e634222e7be
-lambayeque,26-09-2024,/data/lambayeque/26-09-2024.csv,53,53 puesto(s) encontrado(s) en total.,,587a243f-b695-4323-8854-8c8060efb222
-loreto,26-09-2024,/data/loreto/26-09-2024.csv,54,54 puesto(s) encontrado(s) en total.,,88b2e633-0851-49bf-9bc4-3c866a017076
-madre_de_dios,26-09-2024,/data/madre_de_dios/26-09-2024.csv,17,17 puesto(s) encontrado(s) en total.,,5eac1b06-e0a0-4789-9923-09c0df78a311
-cajamarca,26-09-2024,/data/cajamarca/26-09-2024.csv,152,152 puesto(s) encontrado(s) en total.,,b38e8c73-3641-477b-945b-7093c7d000ed
-moquegua,26-09-2024,/data/moquegua/26-09-2024.csv,27,27 puesto(s) encontrado(s) en total.,,42e625c5-5c3d-4547-a4cd-bb9eee52b6f7
-callao,26-09-2024,/data/callao/26-09-2024.csv,43,43 puesto(s) encontrado(s) en total.,,72bf82fd-1b61-4ec8-a9b9-90651d506845
-pasco,26-09-2024,/data/pasco/26-09-2024.csv,52,52 puesto(s) encontrado(s) en total.,,e2fb0db0-c155-4da7-be63-dae6b7bdb5af
-piura,26-09-2024,/data/piura/26-09-2024.csv,56,56 puesto(s) encontrado(s) en total.,,3a39c6be-9605-476c-a335-b0aa78358981
-cusco,26-09-2024,/data/cusco/26-09-2024.csv,204,204 puesto(s) encontrado(s) en total.,,dda8a39a-bf10-4521-b863-bb07e32b98a0
-puno,26-09-2024,/data/puno/26-09-2024.csv,177,177 puesto(s) encontrado(s) en total.,,a3741a49-e585-49bf-b583-bc1673372bd5
-huancavelica,26-09-2024,/data/huancavelica/26-09-2024.csv,118,118 puesto(s) encontrado(s) en total.,,cef9bc5d-814c-415d-abba-3aa103f8d04c
-san_martin,26-09-2024,/data/san_martin/26-09-2024.csv,54,54 puesto(s) encontrado(s) en total.,,257fd62a-94f3-4dc6-abab-cbfd473bbfd1
-tacna,26-09-2024,/data/tacna/26-09-2024.csv,58,58 puesto(s) encontrado(s) en total.,,fd9a8ea2-b977-40f9-bfec-92e93be8ec01
-lima,26-09-2024,/data/lima/26-09-2024.csv,1223,1223 puesto(s) encontrado(s) en total.,,77e2d5b4-942f-4318-afcc-9f74bd851f13
-tumbes,26-09-2024,/data/tumbes/26-09-2024.csv,11,11 puesto(s) encontrado(s) en total.,,6924f18b-3f26-494c-8657-384361bc9135
-huanuco,26-09-2024,/data/huanuco/26-09-2024.csv,138,138 puesto(s) encontrado(s) en total.,,6ba6e513-1e2d-407b-aa1f-e3183f44f223
-ica,26-09-2024,/data/ica/26-09-2024.csv,34,34 puesto(s) encontrado(s) en total.,,459456ec-1da8-40a7-994a-691f2c81e487
-ucayali,26-09-2024,/data/ucayali/26-09-2024.csv,149,149 puesto(s) encontrado(s) en total.,,50f3c41d-997c-40e4-9c58-5f9b04b79030
-junin,26-09-2024,/data/junin/26-09-2024.csv,245,245 puesto(s) encontrado(s) en total.,,b0457591-133c-4ac1-b996-939b6d730e9d
-amazonas,28-09-2024,/data/amazonas/28-09-2024.csv,36,36 puesto(s) encontrado(s) en total.,,9f7a0aaf-ef85-42cb-9015-fc0e5f0249da
-ancash,28-09-2024,/data/ancash/28-09-2024.csv,38,38 puesto(s) encontrado(s) en total.,,0d78c231-5e08-4a95-957d-349f32f4dbc3
-apurimac,28-09-2024,/data/apurimac/28-09-2024.csv,100,100 puesto(s) encontrado(s) en total.,,2ab7b5f9-e4d1-4a7a-99a5-18f309bf644e
-junin,28-09-2024,/data/junin/28-09-2024.csv,202,202 puesto(s) encontrado(s) en total.,,ef122240-c857-47b9-8628-a84df8905401
-arequipa,28-09-2024,/data/arequipa/28-09-2024.csv,84,84 puesto(s) encontrado(s) en total.,,141c9c59-150f-4f2c-8d34-138000cd029f
-ayacucho,28-09-2024,/data/ayacucho/28-09-2024.csv,34,34 puesto(s) encontrado(s) en total.,,80980aae-75a0-4ac6-8243-9c3de54564b5
-la_libertad,28-09-2024,/data/la_libertad/28-09-2024.csv,175,175 puesto(s) encontrado(s) en total.,,d451c6fe-a04f-40d1-b6e4-878d8560e42a
-lambayeque,28-09-2024,/data/lambayeque/28-09-2024.csv,48,48 puesto(s) encontrado(s) en total.,,e3b5b223-dd28-48bc-bf2c-ed96cbf31890
-cajamarca,28-09-2024,/data/cajamarca/28-09-2024.csv,139,139 puesto(s) encontrado(s) en total.,,c1c16f78-99b3-4e7c-a67a-6a810e9a6946
-loreto,28-09-2024,/data/loreto/28-09-2024.csv,35,35 puesto(s) encontrado(s) en total.,,758e01d8-ea92-4a99-89d8-01afc44d7b14
-callao,28-09-2024,/data/callao/28-09-2024.csv,21,21 puesto(s) encontrado(s) en total.,,aa56536e-917a-4a2b-811a-d9a3fcf7e7e5
-madre_de_dios,28-09-2024,/data/madre_de_dios/28-09-2024.csv,12,12 puesto(s) encontrado(s) en total.,,7f8a4a7a-0d38-4d15-8852-863bd29bb1ee
-moquegua,28-09-2024,/data/moquegua/28-09-2024.csv,20,20 puesto(s) encontrado(s) en total.,,212b7ab4-5fd9-420a-aca2-6a67088b9cb3
-pasco,28-09-2024,/data/pasco/28-09-2024.csv,25,25 puesto(s) encontrado(s) en total.,,c87fdd51-79e7-48c7-be16-d9ed416feebb
-piura,28-09-2024,/data/piura/28-09-2024.csv,37,37 puesto(s) encontrado(s) en total.,,9e543d40-1806-4259-91f6-c9e6fe45c0b1
-cusco,28-09-2024,/data/cusco/28-09-2024.csv,158,158 puesto(s) encontrado(s) en total.,,de636d24-857f-462c-90be-cd73bcad3418
-puno,28-09-2024,/data/puno/28-09-2024.csv,129,129 puesto(s) encontrado(s) en total.,,679eec5d-284a-4e30-a177-a24797d61dfd
-huancavelica,28-09-2024,/data/huancavelica/28-09-2024.csv,110,110 puesto(s) encontrado(s) en total.,,6746b963-58bc-4af9-b3cc-35a74c861e24
-san_martin,28-09-2024,/data/san_martin/28-09-2024.csv,38,38 puesto(s) encontrado(s) en total.,,d6ba26fa-d0cf-4f76-856c-82e3f2a607e8
-tacna,28-09-2024,/data/tacna/28-09-2024.csv,35,35 puesto(s) encontrado(s) en total.,,223b1c46-644a-42c9-a6af-7c3ba2ecccc4
-tumbes,28-09-2024,/data/tumbes/28-09-2024.csv,6,6 puesto(s) encontrado(s) en total.,,d3f7dce6-21de-402e-bb8e-441565bd48e6
-huanuco,28-09-2024,/data/huanuco/28-09-2024.csv,98,98 puesto(s) encontrado(s) en total.,,27e689cf-6cf2-455d-9067-29186e26081c
-ica,28-09-2024,/data/ica/28-09-2024.csv,31,31 puesto(s) encontrado(s) en total.,,7387b560-630a-4548-bb6a-1383de522650
-lima,28-09-2024,/data/lima/28-09-2024.csv,1137,1137 puesto(s) encontrado(s) en total.,,06ece3b5-a549-4d15-a3ef-c3e2d5b122b8
-ucayali,28-09-2024,/data/ucayali/28-09-2024.csv,148,148 puesto(s) encontrado(s) en total.,,360405f5-c118-4ba7-9270-4bf63f8cc04e
-junin,28-09-2024,/data/junin/28-09-2024.csv,202,202 puesto(s) encontrado(s) en total.,,62520c86-0175-48b3-aa51-46eb337e5631
-amazonas,30-09-2024,/data/amazonas/30-09-2024.csv,36,36 puesto(s) encontrado(s) en total.,,55fd85fe-7722-4d3a-90b8-cc0e9565edc7
-ancash,30-09-2024,/data/ancash/30-09-2024.csv,42,42 puesto(s) encontrado(s) en total.,,cd44dfec-71e7-4dbe-9c3a-b4cb6b8e1be7
-apurimac,30-09-2024,/data/apurimac/30-09-2024.csv,100,100 puesto(s) encontrado(s) en total.,,b893750b-2403-42d2-a53a-b03bc6edb726
-junin,30-09-2024,/data/junin/30-09-2024.csv,204,204 puesto(s) encontrado(s) en total.,,063c9e1b-2553-403b-9a95-bfe49db87c44
-arequipa,30-09-2024,/data/arequipa/30-09-2024.csv,85,85 puesto(s) encontrado(s) en total.,,989cdff7-eb48-4b30-b8f1-9b042035d41a
-ayacucho,30-09-2024,/data/ayacucho/30-09-2024.csv,41,41 puesto(s) encontrado(s) en total.,,5864be6e-b7a8-453e-94a9-bd7973b9aa90
-la_libertad,30-09-2024,/data/la_libertad/30-09-2024.csv,200,200 puesto(s) encontrado(s) en total.,,6ba19872-c449-41b9-91bd-7916aefb5a9f
-lambayeque,30-09-2024,/data/lambayeque/30-09-2024.csv,48,48 puesto(s) encontrado(s) en total.,,3a0c3474-4d13-4880-a9b1-7af4959790f7
-cajamarca,30-09-2024,/data/cajamarca/30-09-2024.csv,141,141 puesto(s) encontrado(s) en total.,,46499b74-868d-43a3-9879-daaaac8b91eb
-loreto,30-09-2024,/data/loreto/30-09-2024.csv,37,37 puesto(s) encontrado(s) en total.,,f433241d-bc6a-44fc-952b-41e18221c350
-callao,30-09-2024,/data/callao/30-09-2024.csv,24,24 puesto(s) encontrado(s) en total.,,10ab69c4-7870-4847-bebd-e2fc14106e79
-madre_de_dios,30-09-2024,/data/madre_de_dios/30-09-2024.csv,12,12 puesto(s) encontrado(s) en total.,,37b32c03-03e0-4e11-8ed2-19c2a08610c3
-moquegua,30-09-2024,/data/moquegua/30-09-2024.csv,30,30 puesto(s) encontrado(s) en total.,,e482bf62-3182-4f86-a473-3d81980a3754
-pasco,30-09-2024,/data/pasco/30-09-2024.csv,27,27 puesto(s) encontrado(s) en total.,,c5b7a655-0b03-4a70-a662-1548fab09ba2
-cusco,30-09-2024,/data/cusco/30-09-2024.csv,159,159 puesto(s) encontrado(s) en total.,,671f2e31-11be-4ace-8899-10a3f515d454
-piura,30-09-2024,/data/piura/30-09-2024.csv,65,65 puesto(s) encontrado(s) en total.,,3185c1b7-9715-4861-bfb1-aa30285f219d
-puno,30-09-2024,/data/puno/30-09-2024.csv,130,130 puesto(s) encontrado(s) en total.,,27780fa8-9b7d-4dd3-9cdd-da8cc121ae77
-huancavelica,30-09-2024,/data/huancavelica/30-09-2024.csv,115,115 puesto(s) encontrado(s) en total.,,2699da5d-6810-4439-95d6-37b13281d194
-san_martin,30-09-2024,/data/san_martin/30-09-2024.csv,40,40 puesto(s) encontrado(s) en total.,,7c9cbcf6-e091-4ceb-af37-8d57ca3ce6ea
-tacna,30-09-2024,/data/tacna/30-09-2024.csv,40,40 puesto(s) encontrado(s) en total.,,f9b1b3a4-84f7-43fd-8e16-308a5804379b
-tumbes,30-09-2024,/data/tumbes/30-09-2024.csv,7,7 puesto(s) encontrado(s) en total.,,ec49b31a-26b5-45a7-94c3-89e41a8f8025
-huanuco,30-09-2024,/data/huanuco/30-09-2024.csv,121,121 puesto(s) encontrado(s) en total.,,2bb0755c-f152-4292-b2e3-5d6ec77cefc8
-ucayali,30-09-2024,/data/ucayali/30-09-2024.csv,149,149 puesto(s) encontrado(s) en total.,,25bd0801-3ec2-4f21-a992-1311086dbe96
-ica,30-09-2024,/data/ica/30-09-2024.csv,31,31 puesto(s) encontrado(s) en total.,,32b92f66-edb5-4404-8568-8b9a60fe15c1
-junin,30-09-2024,/data/junin/30-09-2024.csv,204,204 puesto(s) encontrado(s) en total.,,e616c361-c7d4-4c86-ae12-680dae3eb8ab
-lima,30-09-2024,/data/lima/30-09-2024.csv,1337,1337 puesto(s) encontrado(s) en total.,,5a0f7730-b62b-4f62-9959-b4a1eb6aaf04
-all,01-10-2024,./data/all/01-10-2024.csv,3196,3196,,c4961a0f-b585-493e-97ff-0ed10672bbd4
-all,01-10-2024,./data/all/01-10-2024.csv,3196,3196,172.77143359184265,6c7402a6-0cfe-48ca-b044-3783fe02fef0
-all,02-10-2024,./data/all/02-10-2024.csv,3215,3215,110.03034520149232,5a689f32-f55d-4517-b2ca-7f44bc34d1f6
-all,03-10-2024,./data/all/03-10-2024.csv,3439,3439,118.85119318962096,5ab71220-3d22-473c-87c7-7bacc2db9f44
-all,04-10-2024,./data/all/04-10-2024.csv,3448,3448,115.11876010894775,0510f723-ae1e-4ec6-a5b1-fe9623779f41
-all,04-10-2024,./data/all/04-10-2024.csv,3448,3448,113.58094191551208,b837cd9c-7185-4b80-8816-baf65f8b9ccf
-all,04-10-2024,./data/all/04-10-2024.csv,3434,3434,183.99865913391116,70296e89-5d73-45eb-8475-17481db88b10
-all,07-10-2024,./data/all/07-10-2024.csv,3215,3215,105.25899410247803,423733e2-ac14-4585-8175-80bcf9fd5407
+amazonas,24-09-2024,/data/amazonas/24-09-2024.csv,52,52 puesto(s) encontrado(s) en total.,,24c425b1-ed6d-4416-bd86-b916512f1e0b
+ancash,24-09-2024,/data/ancash/24-09-2024.csv,79,79 puesto(s) encontrado(s) en total.,,f288f64b-0c02-4b71-87b6-bed63656f680
+junin,24-09-2024,/data/junin/24-09-2024.csv,250,250 puesto(s) encontrado(s) en total.,,ba054d3a-6898-420a-9cfa-8ce72289e992
+apurimac,24-09-2024,/data/apurimac/24-09-2024.csv,113,113 puesto(s) encontrado(s) en total.,,0534e627-8406-4e40-8a65-0336c6a4d4a5
+la_libertad,24-09-2024,/data/la_libertad/24-09-2024.csv,234,234 puesto(s) encontrado(s) en total.,,e254c9ff-fd32-484c-addb-94fc11e36d3f
+arequipa,24-09-2024,/data/arequipa/24-09-2024.csv,210,210 puesto(s) encontrado(s) en total.,,7b0abc47-a065-451c-bb98-5f208e71cdc3
+lambayeque,24-09-2024,/data/lambayeque/24-09-2024.csv,54,54 puesto(s) encontrado(s) en total.,,85e3cfbf-e4e4-4fd5-b608-e68a06ffd4cd
+ayacucho,24-09-2024,/data/ayacucho/24-09-2024.csv,85,85 puesto(s) encontrado(s) en total.,,89deb39a-8789-4165-8e51-ee4369c5df9e
+cajamarca,24-09-2024,/data/cajamarca/24-09-2024.csv,186,186 puesto(s) encontrado(s) en total.,,61cfcd22-1111-4f39-9629-eca8095ae9d8
+callao,24-09-2024,/data/callao/24-09-2024.csv,64,64 puesto(s) encontrado(s) en total.,,195c02ab-82e1-481c-9705-c5b97ef2caf5
+cusco,24-09-2024,/data/cusco/24-09-2024.csv,276,276 puesto(s) encontrado(s) en total.,,a780c7e9-4d71-4065-850f-958e9b8831e7
+huancavelica,24-09-2024,/data/huancavelica/24-09-2024.csv,111,111 puesto(s) encontrado(s) en total.,,ce46b2a9-a9b7-4f33-a194-57b3c9d0f7ac
+huanuco,24-09-2024,/data/huanuco/24-09-2024.csv,163,163 puesto(s) encontrado(s) en total.,,c445a1ce-58d1-416a-bc27-7838bf5048c4
+ica,24-09-2024,/data/ica/24-09-2024.csv,55,55 puesto(s) encontrado(s) en total.,,11865ca1-5834-453a-b8a1-9dcb2cd361b5
+lima,24-09-2024,/data/lima/24-09-2024.csv,1274,1274 puesto(s) encontrado(s) en total.,,6de4e7f7-70a3-430c-82fa-3b5176d1ce30
+loreto,24-09-2024,/data/loreto/24-09-2024.csv,62,62 puesto(s) encontrado(s) en total.,,771134bc-02bc-4b06-8af6-1e0894412b70
+madre_de_dios,24-09-2024,/data/madre_de_dios/24-09-2024.csv,28,28 puesto(s) encontrado(s) en total.,,21adaff6-10ff-48c0-8c4e-a6b8ff6222b4
+moquegua,24-09-2024,/data/moquegua/24-09-2024.csv,33,33 puesto(s) encontrado(s) en total.,,70e9dda1-cdfb-404b-b70c-9b2675c68714
+junin,24-09-2024,/data/junin/24-09-2024.csv,250,250 puesto(s) encontrado(s) en total.,,862a885f-52f6-48d9-b22d-dcad329b7e09
+pasco,24-09-2024,/data/pasco/24-09-2024.csv,64,64 puesto(s) encontrado(s) en total.,,83bce56c-a56a-468c-8b00-4405c77c8222
+piura,24-09-2024,/data/piura/24-09-2024.csv,44,44 puesto(s) encontrado(s) en total.,,76609aa4-9a49-4538-b161-76789f1838fc
+puno,24-09-2024,/data/puno/24-09-2024.csv,153,153 puesto(s) encontrado(s) en total.,,25d51bdc-42e4-44d9-b025-f92ce606c609
+san_martin,24-09-2024,/data/san_martin/24-09-2024.csv,35,35 puesto(s) encontrado(s) en total.,,6ed0f690-aa35-4eab-88dc-25d9e1f4dcf2
+tacna,24-09-2024,/data/tacna/24-09-2024.csv,66,66 puesto(s) encontrado(s) en total.,,1c6e22f6-5d0e-4de4-b075-dd7eaa3f9f72
+tumbes,24-09-2024,/data/tumbes/24-09-2024.csv,23,23 puesto(s) encontrado(s) en total.,,ecffef14-159b-4bd7-b671-08ae493c1ca1
+ucayali,24-09-2024,/data/ucayali/24-09-2024.csv,171,171 puesto(s) encontrado(s) en total.,,b93655bc-d4d6-41eb-a191-3abcc982face
+amazonas,25-09-2024,/data/amazonas/25-09-2024.csv,52,52 puesto(s) encontrado(s) en total.,,4f95b353-6999-4ec8-87ee-ecef439d3113
+ancash,25-09-2024,/data/ancash/25-09-2024.csv,79,79 puesto(s) encontrado(s) en total.,,6a7d583f-663a-41a2-80a3-df24875cfa28
+apurimac,25-09-2024,/data/apurimac/25-09-2024.csv,120,120 puesto(s) encontrado(s) en total.,,aa9b78f9-8487-43e5-ada2-e95bd0277935
+junin,25-09-2024,/data/junin/25-09-2024.csv,240,240 puesto(s) encontrado(s) en total.,,141ff492-36d0-480f-be48-7ea3bb3e3d6c
+arequipa,25-09-2024,/data/arequipa/25-09-2024.csv,205,205 puesto(s) encontrado(s) en total.,,3000a68b-d4ed-49bc-815b-15b268b9455e
+la_libertad,25-09-2024,/data/la_libertad/25-09-2024.csv,234,234 puesto(s) encontrado(s) en total.,,a869bb67-c42e-4cfb-850c-26e2768d28e1
+lambayeque,25-09-2024,/data/lambayeque/25-09-2024.csv,53,53 puesto(s) encontrado(s) en total.,,1a7e6579-7956-4e2c-b586-052364f11a4a
+ayacucho,25-09-2024,/data/ayacucho/25-09-2024.csv,81,81 puesto(s) encontrado(s) en total.,,085b5481-b0b0-4429-a829-ea73516331a0
+loreto,25-09-2024,/data/loreto/25-09-2024.csv,67,67 puesto(s) encontrado(s) en total.,,37f5ba19-30ef-4cec-9cbf-0d34a1886f0b
+cajamarca,25-09-2024,/data/cajamarca/25-09-2024.csv,167,167 puesto(s) encontrado(s) en total.,,c989337a-e177-4e1b-9e16-1ac2998fc950
+madre_de_dios,25-09-2024,/data/madre_de_dios/25-09-2024.csv,25,25 puesto(s) encontrado(s) en total.,,f38563bd-b991-4391-8062-3123dbbd91d5
+moquegua,25-09-2024,/data/moquegua/25-09-2024.csv,34,34 puesto(s) encontrado(s) en total.,,178c330d-b7bc-4501-a99a-45024d59fd04
+callao,25-09-2024,/data/callao/25-09-2024.csv,57,57 puesto(s) encontrado(s) en total.,,1f445d89-52dc-45ba-91f1-5ce36beb292e
+pasco,25-09-2024,/data/pasco/25-09-2024.csv,55,55 puesto(s) encontrado(s) en total.,,1ed95972-cadf-4a9b-b859-b0361ced1fb0
+piura,25-09-2024,/data/piura/25-09-2024.csv,41,41 puesto(s) encontrado(s) en total.,,4e1d4035-4794-4717-97ee-ca2ac9955237
+cusco,25-09-2024,/data/cusco/25-09-2024.csv,224,224 puesto(s) encontrado(s) en total.,,ad89d26d-f734-4677-b7eb-4547cc563731
+puno,25-09-2024,/data/puno/25-09-2024.csv,204,204 puesto(s) encontrado(s) en total.,,b9ef4771-b7f3-486b-92d7-f7c67fe453d5
+san_martin,25-09-2024,/data/san_martin/25-09-2024.csv,55,55 puesto(s) encontrado(s) en total.,,5afb7acb-e5d1-405a-8f5a-3950d107541d
+lima,25-09-2024,/data/lima/25-09-2024.csv,1326,1326 puesto(s) encontrado(s) en total.,,2ac7e609-d6a5-4f57-baea-cdf93fac6117
+tacna,25-09-2024,/data/tacna/25-09-2024.csv,65,65 puesto(s) encontrado(s) en total.,,f3640331-fb62-4d8f-b064-2d26f0d95177
+tumbes,25-09-2024,/data/tumbes/25-09-2024.csv,20,20 puesto(s) encontrado(s) en total.,,d4fff1dc-a148-475e-8941-6f3e7d353034
+huancavelica,25-09-2024,/data/huancavelica/25-09-2024.csv,115,115 puesto(s) encontrado(s) en total.,,9238f23e-2e0a-419e-a50e-83c8cd40dfce
+huanuco,25-09-2024,/data/huanuco/25-09-2024.csv,135,135 puesto(s) encontrado(s) en total.,,ac63907f-9358-4f69-abf9-61d48df8a9af
+ica,25-09-2024,/data/ica/25-09-2024.csv,36,36 puesto(s) encontrado(s) en total.,,36092d5e-00dd-44fd-9fbb-9a9953ce38bd
+ucayali,25-09-2024,/data/ucayali/25-09-2024.csv,183,183 puesto(s) encontrado(s) en total.,,f7e214c2-0640-40bb-baf5-f5950db446f5
+junin,25-09-2024,/data/junin/25-09-2024.csv,240,240 puesto(s) encontrado(s) en total.,,8b51a61e-0acb-47b0-9951-488727bdaae1
+amazonas,26-09-2024,/data/amazonas/26-09-2024.csv,47,47 puesto(s) encontrado(s) en total.,,2ca0b8d8-4455-46fc-b859-f85cda6e8e58
+ancash,26-09-2024,/data/ancash/26-09-2024.csv,44,44 puesto(s) encontrado(s) en total.,,723fcb07-30d9-4ccd-b773-9160aa3bcdc0
+apurimac,26-09-2024,/data/apurimac/26-09-2024.csv,111,111 puesto(s) encontrado(s) en total.,,eacc6d12-8412-4868-bf5f-889fb3fcb731
+junin,26-09-2024,/data/junin/26-09-2024.csv,245,245 puesto(s) encontrado(s) en total.,,84addd85-00ff-47de-bfc1-b5ac0f95e712
+arequipa,26-09-2024,/data/arequipa/26-09-2024.csv,206,206 puesto(s) encontrado(s) en total.,,3a122855-d416-4ff6-9d31-16d396c15f97
+la_libertad,26-09-2024,/data/la_libertad/26-09-2024.csv,234,234 puesto(s) encontrado(s) en total.,,646fbb81-1b3e-49ad-b4cc-73ea0a8608ab
+ayacucho,26-09-2024,/data/ayacucho/26-09-2024.csv,62,62 puesto(s) encontrado(s) en total.,,878728d0-fdb4-4d9e-adef-33fa014db937
+lambayeque,26-09-2024,/data/lambayeque/26-09-2024.csv,53,53 puesto(s) encontrado(s) en total.,,7ffd60c1-0bcb-4f83-a433-0ccce84331a3
+loreto,26-09-2024,/data/loreto/26-09-2024.csv,54,54 puesto(s) encontrado(s) en total.,,aabd78d1-8519-46be-b0e7-6030fccfa472
+madre_de_dios,26-09-2024,/data/madre_de_dios/26-09-2024.csv,17,17 puesto(s) encontrado(s) en total.,,56dc6415-9934-424e-a056-567539a71c52
+cajamarca,26-09-2024,/data/cajamarca/26-09-2024.csv,152,152 puesto(s) encontrado(s) en total.,,40be86ed-128d-4d25-8d2a-7093fde88cb6
+moquegua,26-09-2024,/data/moquegua/26-09-2024.csv,27,27 puesto(s) encontrado(s) en total.,,20918abe-20e2-430c-a376-8858def069db
+callao,26-09-2024,/data/callao/26-09-2024.csv,43,43 puesto(s) encontrado(s) en total.,,8fc709de-fa48-422f-9d37-609c89461894
+pasco,26-09-2024,/data/pasco/26-09-2024.csv,52,52 puesto(s) encontrado(s) en total.,,7a229421-53a0-4c7f-99ed-695512d81f0b
+piura,26-09-2024,/data/piura/26-09-2024.csv,56,56 puesto(s) encontrado(s) en total.,,605f5605-b927-419c-9024-e61935c34113
+cusco,26-09-2024,/data/cusco/26-09-2024.csv,204,204 puesto(s) encontrado(s) en total.,,15c9b7ac-3dd9-42ae-be41-a75d8a041f1f
+puno,26-09-2024,/data/puno/26-09-2024.csv,177,177 puesto(s) encontrado(s) en total.,,0ee7e355-4c27-4c8f-9994-e4821d914854
+huancavelica,26-09-2024,/data/huancavelica/26-09-2024.csv,118,118 puesto(s) encontrado(s) en total.,,2e65e5e7-c1ad-4d3b-84bf-62d6eb40e352
+san_martin,26-09-2024,/data/san_martin/26-09-2024.csv,54,54 puesto(s) encontrado(s) en total.,,c48a1624-9b17-4771-89d7-4ef531a6312e
+tacna,26-09-2024,/data/tacna/26-09-2024.csv,58,58 puesto(s) encontrado(s) en total.,,41d17120-9b21-492d-a5cf-7027dd1ea973
+lima,26-09-2024,/data/lima/26-09-2024.csv,1223,1223 puesto(s) encontrado(s) en total.,,c369718d-8a0b-42c2-b5d9-523bac21cf42
+tumbes,26-09-2024,/data/tumbes/26-09-2024.csv,11,11 puesto(s) encontrado(s) en total.,,deb376e1-23a7-41fa-beef-903779ef861e
+huanuco,26-09-2024,/data/huanuco/26-09-2024.csv,138,138 puesto(s) encontrado(s) en total.,,4379d175-a2f9-45af-8f88-bf926a81088e
+ica,26-09-2024,/data/ica/26-09-2024.csv,34,34 puesto(s) encontrado(s) en total.,,89ce3e40-ca43-4125-971a-aa667487e31b
+ucayali,26-09-2024,/data/ucayali/26-09-2024.csv,149,149 puesto(s) encontrado(s) en total.,,5d900137-385f-45da-bd31-c062e7920839
+junin,26-09-2024,/data/junin/26-09-2024.csv,245,245 puesto(s) encontrado(s) en total.,,a8178ffc-8f35-4255-899c-9492d45471b4
+amazonas,28-09-2024,/data/amazonas/28-09-2024.csv,36,36 puesto(s) encontrado(s) en total.,,32411a38-8de5-417b-87a2-9e05ff44221f
+ancash,28-09-2024,/data/ancash/28-09-2024.csv,38,38 puesto(s) encontrado(s) en total.,,6ac7f7eb-c485-4ed1-8e53-4688be861e2a
+apurimac,28-09-2024,/data/apurimac/28-09-2024.csv,100,100 puesto(s) encontrado(s) en total.,,984b45a7-e21d-4b99-81e2-0c99644174e7
+junin,28-09-2024,/data/junin/28-09-2024.csv,202,202 puesto(s) encontrado(s) en total.,,e5839e35-68aa-409f-8831-ee13b25da6c7
+arequipa,28-09-2024,/data/arequipa/28-09-2024.csv,84,84 puesto(s) encontrado(s) en total.,,72ec26d0-b432-48aa-916a-c1c81f901ce3
+ayacucho,28-09-2024,/data/ayacucho/28-09-2024.csv,34,34 puesto(s) encontrado(s) en total.,,7d3531be-418a-4dbb-a7de-cd80220e6b5a
+la_libertad,28-09-2024,/data/la_libertad/28-09-2024.csv,175,175 puesto(s) encontrado(s) en total.,,af1f85cc-3a25-4776-8a2d-44b8c2b025e5
+lambayeque,28-09-2024,/data/lambayeque/28-09-2024.csv,48,48 puesto(s) encontrado(s) en total.,,bc504179-7628-41fb-88c5-0375b75e447a
+cajamarca,28-09-2024,/data/cajamarca/28-09-2024.csv,139,139 puesto(s) encontrado(s) en total.,,0dc6b0d8-51ae-45ef-996f-29c84a4009f5
+loreto,28-09-2024,/data/loreto/28-09-2024.csv,35,35 puesto(s) encontrado(s) en total.,,c8701f7a-8c6e-4ecb-b187-0db7df9a97f7
+callao,28-09-2024,/data/callao/28-09-2024.csv,21,21 puesto(s) encontrado(s) en total.,,6416ad88-75f7-4621-9648-81583f6554e2
+madre_de_dios,28-09-2024,/data/madre_de_dios/28-09-2024.csv,12,12 puesto(s) encontrado(s) en total.,,168732ac-04ba-4278-9db3-656434573299
+moquegua,28-09-2024,/data/moquegua/28-09-2024.csv,20,20 puesto(s) encontrado(s) en total.,,523b166e-1ecd-4edb-977d-c5f2cc00bc16
+pasco,28-09-2024,/data/pasco/28-09-2024.csv,25,25 puesto(s) encontrado(s) en total.,,f2a29513-f967-454b-812d-72d34e2563d2
+piura,28-09-2024,/data/piura/28-09-2024.csv,37,37 puesto(s) encontrado(s) en total.,,68efef05-2ed2-47fb-947c-cd86d0a5bc16
+cusco,28-09-2024,/data/cusco/28-09-2024.csv,158,158 puesto(s) encontrado(s) en total.,,3e3721bb-2e14-47ef-b0ad-9a4831d77e64
+puno,28-09-2024,/data/puno/28-09-2024.csv,129,129 puesto(s) encontrado(s) en total.,,c6db636d-d481-4aac-bcbe-691c45e49e45
+huancavelica,28-09-2024,/data/huancavelica/28-09-2024.csv,110,110 puesto(s) encontrado(s) en total.,,00e1083f-e88b-4852-a8f8-cdfc96bd553d
+san_martin,28-09-2024,/data/san_martin/28-09-2024.csv,38,38 puesto(s) encontrado(s) en total.,,032b00fc-b9ff-4350-aa70-f4abce74b40e
+tacna,28-09-2024,/data/tacna/28-09-2024.csv,35,35 puesto(s) encontrado(s) en total.,,0534b12f-965c-4881-83f4-c8caad459830
+tumbes,28-09-2024,/data/tumbes/28-09-2024.csv,6,6 puesto(s) encontrado(s) en total.,,4b2da358-ae3b-4390-845f-3fcd473a3a0a
+huanuco,28-09-2024,/data/huanuco/28-09-2024.csv,98,98 puesto(s) encontrado(s) en total.,,8526ea41-f6d7-4c2b-981b-c4ca58a877a7
+ica,28-09-2024,/data/ica/28-09-2024.csv,31,31 puesto(s) encontrado(s) en total.,,8abf7078-34aa-4343-b57e-05744a9be750
+lima,28-09-2024,/data/lima/28-09-2024.csv,1137,1137 puesto(s) encontrado(s) en total.,,98ad0bae-e937-4c85-a573-04161c2fefd0
+ucayali,28-09-2024,/data/ucayali/28-09-2024.csv,148,148 puesto(s) encontrado(s) en total.,,197bf5e6-6802-47d6-b8ce-56922ec680cf
+junin,28-09-2024,/data/junin/28-09-2024.csv,202,202 puesto(s) encontrado(s) en total.,,1a8eaf90-5915-46a9-87cb-6b195e5c44b1
+amazonas,30-09-2024,/data/amazonas/30-09-2024.csv,36,36 puesto(s) encontrado(s) en total.,,fd68fa1d-415e-4242-9453-1cf5675ec6d7
+ancash,30-09-2024,/data/ancash/30-09-2024.csv,42,42 puesto(s) encontrado(s) en total.,,d515f68d-2304-4cfa-8044-785103f6c107
+apurimac,30-09-2024,/data/apurimac/30-09-2024.csv,100,100 puesto(s) encontrado(s) en total.,,8da73356-ddb8-43ef-92f0-bd561c3ad32c
+junin,30-09-2024,/data/junin/30-09-2024.csv,204,204 puesto(s) encontrado(s) en total.,,a86b29b4-4472-4a56-bd98-7d38bfd37ff1
+arequipa,30-09-2024,/data/arequipa/30-09-2024.csv,85,85 puesto(s) encontrado(s) en total.,,7d78d36d-fe46-4a68-92b6-0ab49db3832d
+ayacucho,30-09-2024,/data/ayacucho/30-09-2024.csv,41,41 puesto(s) encontrado(s) en total.,,e24ada91-4c18-4787-bd6f-1565e3091160
+la_libertad,30-09-2024,/data/la_libertad/30-09-2024.csv,200,200 puesto(s) encontrado(s) en total.,,41aaa9fd-48b3-4fa6-a7f9-74f0cfa8057a
+lambayeque,30-09-2024,/data/lambayeque/30-09-2024.csv,48,48 puesto(s) encontrado(s) en total.,,85fc3873-97c8-4401-a657-96938016f98f
+cajamarca,30-09-2024,/data/cajamarca/30-09-2024.csv,141,141 puesto(s) encontrado(s) en total.,,57d99b79-d3dd-4e82-bc9d-a3cb13b8fe0b
+loreto,30-09-2024,/data/loreto/30-09-2024.csv,37,37 puesto(s) encontrado(s) en total.,,92c05029-9083-45f1-88a8-35f6764ee865
+callao,30-09-2024,/data/callao/30-09-2024.csv,24,24 puesto(s) encontrado(s) en total.,,86426578-f474-4db7-a80f-2c1687afb5ef
+madre_de_dios,30-09-2024,/data/madre_de_dios/30-09-2024.csv,12,12 puesto(s) encontrado(s) en total.,,45216c83-b280-4203-ba31-5b1743c7ad43
+moquegua,30-09-2024,/data/moquegua/30-09-2024.csv,30,30 puesto(s) encontrado(s) en total.,,112023f9-5a98-4eb2-90ed-dea8a74420f5
+pasco,30-09-2024,/data/pasco/30-09-2024.csv,27,27 puesto(s) encontrado(s) en total.,,32ca4b7d-2eef-455e-abe5-8c281d9f1873
+cusco,30-09-2024,/data/cusco/30-09-2024.csv,159,159 puesto(s) encontrado(s) en total.,,6a985d27-5cce-4980-bfee-96465e7e8627
+piura,30-09-2024,/data/piura/30-09-2024.csv,65,65 puesto(s) encontrado(s) en total.,,4b22dc07-b1b2-4469-b0ad-98595ed0a612
+puno,30-09-2024,/data/puno/30-09-2024.csv,130,130 puesto(s) encontrado(s) en total.,,9bab2e59-9e69-467e-a15c-06fc70742aad
+huancavelica,30-09-2024,/data/huancavelica/30-09-2024.csv,115,115 puesto(s) encontrado(s) en total.,,9b55c9fd-2466-4e35-bb83-21d0a643f49c
+san_martin,30-09-2024,/data/san_martin/30-09-2024.csv,40,40 puesto(s) encontrado(s) en total.,,2ca22e59-e2fe-4d4a-8934-3289d370eff1
+tacna,30-09-2024,/data/tacna/30-09-2024.csv,40,40 puesto(s) encontrado(s) en total.,,ff29bbfe-7fb0-4f82-9082-ee4d7ae25322
+tumbes,30-09-2024,/data/tumbes/30-09-2024.csv,7,7 puesto(s) encontrado(s) en total.,,5a3264dc-9eda-4d3f-915d-a0ba337debca
+huanuco,30-09-2024,/data/huanuco/30-09-2024.csv,121,121 puesto(s) encontrado(s) en total.,,a07f9aec-97a0-47b6-97db-282cba87fad9
+ucayali,30-09-2024,/data/ucayali/30-09-2024.csv,149,149 puesto(s) encontrado(s) en total.,,49604afa-5e50-432b-bbef-8a968a2b5059
+ica,30-09-2024,/data/ica/30-09-2024.csv,31,31 puesto(s) encontrado(s) en total.,,b78d57d7-b09f-49a8-8b90-e75df4a9a514
+junin,30-09-2024,/data/junin/30-09-2024.csv,204,204 puesto(s) encontrado(s) en total.,,b632f6d8-574f-4a43-8a08-b7a4dcbec5fd
+lima,30-09-2024,/data/lima/30-09-2024.csv,1337,1337 puesto(s) encontrado(s) en total.,,cd935fe0-c37f-411a-9304-b7e984b55def
+all,01-10-2024,./data/all/01-10-2024.csv,3196,3196,,feadb68e-3598-41a0-af6c-0fe862d4b0a6
+all,01-10-2024,./data/all/01-10-2024.csv,3196,3196,172.77143359184265,4f4da127-ddc4-4ef8-88db-994600924e4f
+all,02-10-2024,./data/all/02-10-2024.csv,3215,3215,110.03034520149232,b0737b03-b185-4f6f-97c5-d50700ef2ac2
+all,03-10-2024,./data/all/03-10-2024.csv,3439,3439,118.85119318962096,7d30cbe0-af83-4497-8173-3c4b094514c3
+all,04-10-2024,./data/all/04-10-2024.csv,3448,3448,115.11876010894775,cf75326a-40c8-4973-972f-d62b7b5922ca
+all,04-10-2024,./data/all/04-10-2024.csv,3448,3448,113.58094191551208,68813c27-21fe-4052-890b-133fd3d42c5a
+all,04-10-2024,./data/all/04-10-2024.csv,3434,3434,183.9986591339112,9cd34211-eb1d-404c-9b0c-c0f34c0e30aa
+all,07-10-2024,./data/all/07-10-2024.csv,3215,3215,105.25899410247804,c5e726c2-7425-4d43-9060-7702b1a3ae5c
+all,09-10-2024,./data/all/09-10-2024.csv,3287,3287,128.04125452041626,e699631d-637e-469b-8af0-4f6eef8d2876
+all,09-10-2024,./data/all/09-10-2024.csv,3170,3170,393.6722586154938,
+all,09-10-2024,./data/all/09-10-2024.csv,3191,3191,404.43030643463135,
+all,09-10-2024,./data/all/09-10-2024.csv,3191,3191,398.6736640930176,
+all,09-10-2024,./data/all/09-10-2024.csv,196,196,52.13931679725647,
+all,09-10-2024,./data/all/09-10-2024.csv,196,196,55.30743718147278,
+all,09-10-2024,./data/all/09-10-2024.csv,196,196,53.122334480285645,
+all,09-10-2024,./data/all/09-10-2024.csv,122,122,43.18836736679077,
+all,09-10-2024,./data/all/09-10-2024.csv,114,114,24.538647890090942,
+all,09-10-2024,./data/all/09-10-2024.csv,124,124,26.43429970741272,
+all,09-10-2024,./data/all/09-10-2024.csv,124,124,25.822625160217285,
+all,09-10-2024,./data/all/09-10-2024.csv,125,125,26.6769597530365,
+all,09-10-2024,./data/all/09-10-2024.csv,3251,3251,407.4403104782105,
+all,10-10-2024,./data/all/10-10-2024.csv,3331,3331,417.94577288627625,
+all,10-10-2024,./data/all/10-10-2024.csv,3552,3552,435.26386737823486,
+all,10-10-2024,./data/all/10-10-2024.csv,3604,3604,421.26032400131226,

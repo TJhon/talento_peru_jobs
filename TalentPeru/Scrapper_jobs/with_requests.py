@@ -11,7 +11,6 @@ from .utils import (
     goto_next_page_payload,
     goto_last_page_payload,
     goto_prev_page_payload,
-    job_wage_float,
 )
 from .global_env import URL, HEADERS, PAYLOAD
 
@@ -113,9 +112,7 @@ def convert_in_df(html_page) -> pd.DataFrame:
             "end_date",
         ],
     )
-    # data["wage"] = data["wage"].apply(job_wage_float)
-    # data[["departamento", "distrito"]] = data["ubication"].str.split("-", expand=True)
-    # data["institution"] = data["institution"].apply(lambda x: x.title().strip())
+
     return data
 
 
