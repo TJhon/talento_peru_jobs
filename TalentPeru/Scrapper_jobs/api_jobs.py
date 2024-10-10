@@ -26,9 +26,11 @@ def get_logs():
 
 
 def clean_jobs_data(data: pd.DataFrame):
-    data[["ubication_region", "ubication_dist"]] = data["ubication"].str.split(
-        "-", expand=True, n=1
-    )
+    ubication_col = ["ubication_region", "ubication_dist"]
+    data[ubication_col] = data["ubication"].str.split("-", expand=True, n=1)
+    for u in ubication_col:
+        data[u] = data[u].str.strip()
+
     data["salary"] = data["salary"].apply(job_wage_float)
     return data
 

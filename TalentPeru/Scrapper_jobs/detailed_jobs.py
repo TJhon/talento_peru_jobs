@@ -3,7 +3,7 @@ import uuid
 from bs4 import BeautifulSoup
 import requests
 import math
-import pandas as pd
+import pandas as pd, numpy as np
 import warnings, tqdm
 
 from .global_env import URL, HEADERS, depa_value
@@ -151,9 +151,17 @@ class JobScrapper:
         data_details = data_details.rename(columns=columns)
         card_data = pd.concat(self.card_data, ignore_index=True)
         card_data.columns = shared_columns
-
-        if len(card_data) == len(data_details):
-            data_details["ubication"] = card_data["ubication"]
+        title = ["job_posting_number", "public_institution"]
+        for t in title:
+            card_data[t] = card_data[t].str.title().str.strip()
+        try:
+            data_details = pd.merge(data_details, card_data, how="left")
+        except:
+            try:
+                data_details["ubication"] = card_data["ubication"]
+            except:
+                pass
+        data_details = data_details.replace({np.nan: None})
         return data_details
 
     def scrapper_sequential(self):

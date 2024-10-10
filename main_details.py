@@ -86,7 +86,7 @@ if __name__ == "__main__":
 
     print("\n" * 10)
     data = pd.concat(data_dep_list, ignore_index=True).drop_duplicates()
-    data["day_scrapper"] = today
+    data["scrapping_date"] = today
     # data = data.rename(columns=columns)
     data = clean_jobs_data(data)
     data.to_csv(data_path, index=False)

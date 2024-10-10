@@ -34,7 +34,7 @@ def upload_and_drop_data(data):
             "password": pssword,
         }
     )
-    data_table.delete().eq("salary", 100.0).execute()
+
     data_table.insert(data_r).execute()
     # supabase.table("test").insert({"id": 1000000}).execute()
     response = supabase.auth.sign_out()
