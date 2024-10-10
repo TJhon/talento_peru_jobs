@@ -29,19 +29,7 @@ def clean_jobs_data(data: pd.DataFrame):
     data[["ubication_region", "ubication_dist"]] = data["ubication"].str.split(
         "-", expand=True, n=1
     )
-    data["wage"] = data["wage"].apply(job_wage_float)
-    str_columns = [
-        "position",
-        "institution",
-        "ubication",
-        "ubication_region",
-        "ubication_dist",
-        "num_conv",
-    ]
-    for cl in str_columns:
-        data[cl] = data[cl].str.strip()
-
-    # data = data.reset_index(names=["id"])
+    data["salary"] = data["salary"].apply(job_wage_float)
     return data
 
 

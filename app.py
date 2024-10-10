@@ -6,9 +6,9 @@ import pandas as pd
 from TalentPeru.Scrapper_jobs.api_jobs import (
     get_jobs_data,
     get_last_jobs_data,
-    get_logs,
+    # get_logs,
 )
-
+from TalentAPI.init_supabase import get_logs, get_log_date
 
 app = FastAPI()
 
@@ -37,12 +37,18 @@ async def get_jobs():
     return get_last_jobs_data()
 
 
+today = "09/10/"
+
+
 @app.get("/jobs/logs")
-async def get_logs_api():
+async def get_logs_api(date=None):
+    if date is not None:
+        return get_log_date(date)
     return get_logs()
 
 
-# print(get_logs())
+# @app.get('/jobs/logs/')
+# def get_logs_date()
 
 
 @app.get("/jobs/history/{date}")

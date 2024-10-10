@@ -52,10 +52,15 @@ class JobScrapper:
         )
         self.data = []
 
-    def scrapper_page(self, n=10) -> list:
+    def scrapper_page(self, n=10, ubication=None) -> list:
+        if ubication is None:
+            ubication = [None] * n
+        if len(ubication) != n:
+            ubication = [None] * n
         try:
+            # insertar ubicacion por parametro
             detail_scrapper = self.scrapper_fn.get_details_data_in_page(n)
-
+            detail_scrapper["ubication"] = ubication
             self.data.append(detail_scrapper)
             return detail_scrapper
         except:
@@ -65,21 +70,35 @@ class JobScrapper:
         dep = self.dep
         name_depa = depa_value[dep].title()
         name_description = f"Departamento de {name_depa} "
+
         if side is not None:
             name_description = f"Departamento de {name_depa} - {side}"
+
         for _ in tqdm.tqdm(range(iteration_total), desc=name_description):
             page_content_jobs = change_page()
+            ubication = self.get_ubication(page_content_jobs)
             jobs = page_content_jobs.find_all("div", class_="cuadro-vacantes")
             n_jobs = len(jobs)
             # print(n_jobs)
-            self.scrapper_page(n_jobs)
+            self.scrapper_page(n_jobs, ubication=ubication)
+
+    @staticmethod
+    def get_ubication(html_soup):
+        ubication_spans = html_soup.find_all("span", text="Ubicación:")
+        locations = [
+            ubication.find_next("span", class_="detalle-sp").get_text(strip=True)
+            for ubication in ubication_spans
+        ]
+        locations = [remove_extra_spaces(loc) for loc in locations]
+        return locations
 
     def get_data(self):
         return pd.concat(self.data, ignore_index=True)
 
     def scrapper_sequential(self):
         total_pages = self.total_pages
-        self.scrapper_page()  # primera pagian
+        ubication = self.get_ubication(self.soup)
+        self.scrapper_page(ubication=ubication)  # primera pagian
         n_discount = 1
 
         iteration_total = total_pages - n_discount
@@ -100,9 +119,11 @@ class JobScrapper:
 
     def scrapper_both_right(self):
         page_content_jobs = self.go_last_page()
+
         jobs = page_content_jobs.find_all("div", class_="cuadro-vacantes")
         n_jobs = len(jobs)
-        self.scrapper_page(n_jobs)
+        ubication = self.get_ubication(page_content_jobs)
+        self.scrapper_page(n_jobs, ubication=ubication)
         change_page = self.go_prev_page
 
         total_pages = self.total_pages
