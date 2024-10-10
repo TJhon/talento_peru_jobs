@@ -65,6 +65,7 @@ if __name__ == "__main__":
             data_dep_list.append(future.result())
 
     data = pd.concat(data_dep_list, ignore_index=True).drop_duplicates()
+    data["day_scrapper"] = today
 
     data.to_csv(data_path, index=False)
     last_log = pd.read_csv(PATH_LOG)
