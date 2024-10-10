@@ -17,6 +17,37 @@ from .utils import (
 
 warnings.filterwarnings("ignore")
 
+columns = {
+    "url_convocatoria": "job_posting_url",
+    "Cantidad De Vacantes:": "vacancies",
+    "Número De Convocatoria:": "job_posting_number",
+    "Remuneración:": "salary",
+    "Fecha Inicio De Publicación:": "start_publication_date",
+    "Fecha Fin De Publicación:": "end_publication_date",
+    "Experiencia:": "required_experience",
+    "Formación Académica - Perfil:": "educational_background",
+    "Especialización:": "specialization",
+    "Conocimiento:": "required_knowledge",
+    "Competencias:": "skills",
+    "position": "job_title",
+    "institution": "public_institution",
+    "uuid": "unique_id",
+    "day_scrapper": "scraping_date",
+}
+
+
+shared_columns = [
+    "public_institution",
+    "ubication",
+    "job_posting_number",
+    "vacancies",
+    "salary",
+    "start_publication_date",
+    "end_publication_date",
+    "job_title",
+]
+# cards_columns = shared_columns + ["ubication"]
+
 
 def remove_extra_spaces(text):
     """Removes multiple spaces from a string."""
@@ -42,6 +73,7 @@ class JobScrapper:
         self.dep = dep
         # Obtenenmos la session y el valor de view_value
         self.first_session()
+
         # vamos a la primera pagina del departamento
         self.soup = self.go_first_page()
         # obtenemos el total de paginas existentes
@@ -51,16 +83,31 @@ class JobScrapper:
             view_value=self.view_state_value, session=self.session
         )
         self.data = []
+        self.card_data = []
 
-    def scrapper_page(self, n=10, ubication=None) -> list:
-        if ubication is None:
-            ubication = [None] * n
-        if len(ubication) != n:
-            ubication = [None] * n
+    # @staticmethod
+    def scrapper_cards(self, html):
+        jobs_info = html.find_all("div", class_="cuadro-vacantes")
+
+        data_cards = []
+        for job in jobs_info:
+            position = job.find("div", class_="titulo-vacante").get_text(strip=True)
+            card_details = job.find_all("span", class_="detalle-sp")
+            info = [
+                remove_extra_spaces(card_detail.get_text(strip=True))
+                for card_detail in card_details
+            ]
+            data_cards.append(info + [position])
+        # self.data_cards
+        self.card_data.append(pd.DataFrame(data_cards))
+        return self
+
+    def scrapper_page(self, n=10) -> list:
+
         try:
             # insertar ubicacion por parametro
             detail_scrapper = self.scrapper_fn.get_details_data_in_page(n)
-            detail_scrapper["ubication"] = ubication
+
             self.data.append(detail_scrapper)
             return detail_scrapper
         except:
@@ -69,21 +116,28 @@ class JobScrapper:
     def scrapper_seq(self, iteration_total, change_page, side=None):
         dep = self.dep
         name_depa = depa_value[dep].title()
-        name_description = f"Departamento de {name_depa} "
+        name_description = f"Departamento de {name_depa} - {dep} "
 
         if side is not None:
             name_description = f"Departamento de {name_depa} - {side}"
+        if dep == "15":
+            colour = "blue"
+        else:
+            colour = None
 
-        for _ in tqdm.tqdm(range(iteration_total), desc=name_description):
+        for _ in tqdm.tqdm(
+            range(iteration_total), desc=name_description, colour=colour
+        ):
             page_content_jobs = change_page()
-            ubication = self.get_ubication(page_content_jobs)
+            self.scrapper_cards(page_content_jobs)
+
             jobs = page_content_jobs.find_all("div", class_="cuadro-vacantes")
             n_jobs = len(jobs)
             # print(n_jobs)
-            self.scrapper_page(n_jobs, ubication=ubication)
+            self.scrapper_page(n_jobs)
 
     @staticmethod
-    def get_ubication(html_soup):
+    def get_metadata_data(html_soup):
         ubication_spans = html_soup.find_all("span", text="Ubicación:")
         locations = [
             ubication.find_next("span", class_="detalle-sp").get_text(strip=True)
@@ -93,13 +147,21 @@ class JobScrapper:
         return locations
 
     def get_data(self):
-        return pd.concat(self.data, ignore_index=True)
+        data_details = pd.concat(self.data, ignore_index=True)
+        data_details = data_details.rename(columns=columns)
+        card_data = pd.concat(self.card_data, ignore_index=True)
+        card_data.columns = shared_columns
+
+        if len(card_data) == len(data_details):
+            data_details["ubication"] = card_data["ubication"]
+        return data_details
 
     def scrapper_sequential(self):
         total_pages = self.total_pages
-        ubication = self.get_ubication(self.soup)
-        self.scrapper_page(ubication=ubication)  # primera pagian
+        self.scrapper_cards(self.soup)
+        self.scrapper_page()  # primera pagian
         n_discount = 1
+        # print(total_pages)
 
         iteration_total = total_pages - n_discount
         change_page = self.go_next_page
@@ -119,11 +181,12 @@ class JobScrapper:
 
     def scrapper_both_right(self):
         page_content_jobs = self.go_last_page()
+        self.scrapper_cards(page_content_jobs)
 
         jobs = page_content_jobs.find_all("div", class_="cuadro-vacantes")
         n_jobs = len(jobs)
-        ubication = self.get_ubication(page_content_jobs)
-        self.scrapper_page(n_jobs, ubication=ubication)
+        # ubication = self.get_ubication(page_content_jobs)
+        self.scrapper_page(n_jobs)
         change_page = self.go_prev_page
 
         total_pages = self.total_pages
@@ -156,7 +219,7 @@ class JobScrapper:
         view_state_vale = self.get_view_state(fp_soup)
         self.session = session
         self.view_state_value = view_state_vale
-        # self.soup = fp_soup
+        self.fpsoup = fp_soup
         return self
 
     def goto_page(self, data: dict):
@@ -282,7 +345,9 @@ class JobScraperDetails:
         job_more_details.update(requerimientos_job)
         job_more_details["position"] = position
         job_more_details["institution"] = institution.title()
-        job_more_details["uuid"] = str(uuid.uuid5(uuid.NAMESPACE_DNS, position))
+        job_more_details["uuid"] = str(
+            uuid.uuid5(uuid.NAMESPACE_DNS, position + institution.title())
+        )
 
         return job_more_details
 

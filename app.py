@@ -37,9 +37,6 @@ async def get_jobs():
     return get_last_jobs_data()
 
 
-today = "09/10/"
-
-
 @app.get("/jobs/logs")
 async def get_logs_api(date=None):
     if date is not None:

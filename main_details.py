@@ -87,11 +87,11 @@ if __name__ == "__main__":
     print("\n" * 10)
     data = pd.concat(data_dep_list, ignore_index=True).drop_duplicates()
     data["day_scrapper"] = today
-    data = data.rename(columns=columns)
+    # data = data.rename(columns=columns)
     data = clean_jobs_data(data)
     data.to_csv(data_path, index=False)
     # data["day_scrapper"] = today_sp
-    upload_and_drop_data(data)
+
     #########
     last_log = pd.read_csv(PATH_LOG)
     end = time() - start
@@ -108,5 +108,8 @@ if __name__ == "__main__":
     end = time() - start
     day_data.to_csv(PATH_LOG, index=False)
     run_git_commands(end)
+
+    # upload to supabase
+    upload_and_drop_data(data)
 
     print(f"Tiempo de ejecución: {end } segundos")
