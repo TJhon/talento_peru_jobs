@@ -161,6 +161,11 @@ class JobScrapper:
                 data_details["ubication"] = card_data["ubication"]
             except:
                 pass
+        # data_details['ubication'] = data
+        data_details.loc[data_details["ubication"].isna(), "ubication"] = depa_value[
+            self.dep
+        ]
+        # depa_value[dep]
         data_details = data_details.replace({np.nan: None})
         return data_details
 

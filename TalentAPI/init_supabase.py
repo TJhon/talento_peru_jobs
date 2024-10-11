@@ -26,6 +26,13 @@ days_ago_str = days_ago.strftime("%d-%m-%Y")
 data_table = supabase.table("job_postings")
 
 
+def remove_extra_spaces(text):
+    import re
+
+    """Removes multiple spaces from a string."""
+    return re.sub(r"\s+", " ", text).strip()
+
+
 def upload_and_drop_data(data):
     data_r = data.to_dict("records")
     response = supabase.auth.sign_in_with_password(
@@ -76,11 +83,40 @@ def get_log_date(date):
     return {"date": str(date), "n_jobs": int(n_jobs)}
 
 
-def get_jobs_data(date):
-    if date not in get_logs()["dates"]:
-        return {"error": "date not found in DB, see '/jobs/logs'"}
-    data = data_table.select("*").eq("scraping_date", date).execute()
+def get_jobs_data(date, page: int = None, dep=None):
+
+    n_by_page = 11
+    data = data_table.select(
+        "vacancies, salary, job_posting_url, start_publication_date, end_publication_date, ubication_region, ubication_dist",
+        "job_title",
+        "unique_id",
+        "public_institution",
+    ).eq("scraping_date", date)
+    if dep is not None:
+        data = data.eq("ubication_region", dep)
+        # print()
+    if page is not None:
+        last_n = page * n_by_page
+        begin_n = last_n - n_by_page
+        data = data.range(begin_n, last_n)
+
+    data = data.execute()
     return data.data
-    # data = pd.read_csv(URL_BASE.format(date=date))
-    # data = clean_jobs_data(data)
-    # return data.to_dict("records")
+
+
+def get_job_data(date, uuid):
+    data = (
+        data_table.select("*").eq("scraping_date", date).eq("unique_id", uuid).execute()
+    )
+    # print(data)
+    return data
+
+
+def get_regions(date):
+    data = (
+        data_table.select("distinct ubication_region", distinct=True)
+        .eq("scraping_date", date)
+        .execute()
+    )
+    # print(data)
+    return data
