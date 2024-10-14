@@ -13,9 +13,9 @@ gmt5 = pytz.timezone("Etc/GMT+5")
 today = datetime.datetime.now(gmt5).strftime("%d-%m-%Y")
 
 
-deps = [str(n).zfill(2) for n in range(1, 26) if n != 15]
-# deps = [str(n).zfill(2) for n in [1, 3] if n != 15]
-lima = "15"
+# deps = [str(n).zfill(2) for n in range(1, 26) if n != 15]
+deps = [str(n).zfill(2) for n in range(1, 2) if n != 15]
+lima = "02"
 # lima = "25"
 PATH_LOG = "./data_logs/logs.csv"
 data_path = f"./data/all/{today}.csv"

@@ -154,6 +154,7 @@ class JobScrapper:
         title = ["job_posting_number", "public_institution"]
         for t in title:
             card_data[t] = card_data[t].str.title().str.strip()
+
         try:
             data_details = pd.merge(data_details, card_data, how="left")
         except:

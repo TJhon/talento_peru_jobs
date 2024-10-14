@@ -94,8 +94,8 @@ function fetch_ine() {
     .then((data) => console.log(data));
 }
 
-let c = 2;
+let c = 1000000;
 for (let i = 0; i < c; i++) {
-  await new Promise((r) => setTimeout(r, 1000));
+  await new Promise((r) => setTimeout(r, Math.floor(Math.random() * 5000)));
   await fetch_ine();
 }
