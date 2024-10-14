@@ -154,7 +154,6 @@ class JobScrapper:
         title = ["job_posting_number", "public_institution"]
         for t in title:
             card_data[t] = card_data[t].str.title().str.strip()
-
         try:
             data_details = pd.merge(data_details, card_data, how="left")
         except:
@@ -350,6 +349,9 @@ class JobScraperDetails:
                 value = value_html.find("a", href=True)["href"]
                 if value == "#":
                     value = value_html.get_text(strip=True).lower()
+                https = "https://"
+                if not value.startswith(https):
+                    value = https + value
             else:
                 value = self.remove_extra_spaces(
                     value_html.get_text(strip=True)
@@ -359,9 +361,7 @@ class JobScraperDetails:
         job_more_details.update(requerimientos_job)
         job_more_details["position"] = position
         job_more_details["institution"] = institution.title()
-        job_more_details["uuid"] = str(
-            uuid.uuid5(uuid.NAMESPACE_DNS, position + institution.title())
-        )
+        job_more_details["uuid"] = str(uuid.uuid4())
 
         return job_more_details
 
