@@ -7,11 +7,11 @@ Este proyecto realiza el scraping de ofertas laborales del portal oficial de [AP
 - **Peticiones adicionales**: Cada vez que se consulta la descripción de un trabajo y se regresa a la página anterior, se descargan 6MB adicionales de archivos estáticos, lo que genera tiempos de espera de 2-4 segundos por cada interacción.
 - **Comparación con APIs modernas**: Hacer una petición a una API basada en Vercel que devuelve datos de ~3.5k empleos (filas) solo consume 1.2MB, mostrando una mejora considerable en eficiencia.
 
-> [!WARNING]
+> [!IMPORTANT]  
 > Este proyecto está actualmente en desarrollo. Los datos recolectados hasta ahora se encuentran disponibles en la siguiente carpeta del repositorio, organizados en archivos CSV con el formato `dd-mm-yyyy.csv`.
 > Carpeta de datos recolectados: [Data CSVs](https://github.com/TJhon/talento_peru_jobs/tree/description_jobs_ubication/data/all)
 
-> [!IMPORTANT]  
+> [!WARNING]
 > La página de SERVIR bloquea peticiones desde IPs que no estén ubicadas en Perú, asi que todavia no se puede automatizar con GitHub Actions, ni con otras shells. Tampoco fue eficaz usar proxies gratis
 
 ## Estructura del Proyecto
