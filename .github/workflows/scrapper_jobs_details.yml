@@ -3,7 +3,7 @@ name: Actualizar Trabajos - Diario
 on:
   push:
     branches:
-      - fail_get_url_fail_page_error
+      - description_jobs_ubication
 
 jobs:
   Scrapper:
@@ -24,13 +24,7 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - name: Instalar Chromium
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium-browser
-          sudo apt-get install chromium-chromedriver
-
-      - run: python works.py --n_reg=24 --local=0
+      - run: python main_details.py
 
       - id: commit
         name: Commit  files

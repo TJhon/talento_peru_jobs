@@ -1,5 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from TalentAPI.init_supabase import upload_and_drop_data
+
 
 from TalentPeru.Scrapper_jobs.detailed_jobs import JobScrapper
 
@@ -38,17 +38,6 @@ columns = {
     "uuid": "unique_id",
     "day_scrapper": "scraping_date",
 }
-
-
-def run_git_commands(total_time):
-    # pass
-    subprocess.run(["git", "add", "-A"], check=True)
-
-    commit_message = f"Data with requests {today}, total time: {total_time} seconds"
-    subprocess.run(["git", "pull"], check=True)
-    subprocess.run(["git", "commit", "-m", commit_message], check=True)
-
-    subprocess.run(["git", "push"], check=True)
 
 
 if __name__ == "__main__":
@@ -107,9 +96,5 @@ if __name__ == "__main__":
 
     end = time() - start
     day_data.to_csv(PATH_LOG, index=False)
-    run_git_commands(end)
-
-    # upload to supabase
-    upload_and_drop_data(data)
 
     print(f"Tiempo de ejecución: {end } segundos")
