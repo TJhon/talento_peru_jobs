@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - description_jobs_ubication
+      - rformat
   schedule:
     - cron: "49 18 * * *"
 
