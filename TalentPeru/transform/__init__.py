@@ -1,8 +1,6 @@
 import uuid
 import pandas as pd, re
 
-from xarray import DataArray
-
 from TalentPeru.extract.utils.utils import limpiar_espacios
 from ..utils import today
 

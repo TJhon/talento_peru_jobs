@@ -27,7 +27,7 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - run: python main_details.py
+      - run: python main.py
 
       - id: commit
         name: Commit  files
@@ -37,7 +37,7 @@ jobs:
           git config --local user.email "actions@github.com"
           git add -A
           git commit -m "Update Data"
-          git push origin description_jobs_ubication
+          git push origin rformat
         env:
           REPO_KEY: ${{ secrets.GITHUB_TOKEN }}
           username: github-actions
