@@ -3,7 +3,7 @@ from TalentPeru.extract import extract_jobs_in_parallel
 from TalentPeru.transform import clean_jobs_data
 from TalentPeru.load import save_data_gh, save_logs_gh
 
-data = extract_jobs_in_parallel(lima="03")
+data = extract_jobs_in_parallel(lima="15")
 
 clean_data = clean_jobs_data(data)
 

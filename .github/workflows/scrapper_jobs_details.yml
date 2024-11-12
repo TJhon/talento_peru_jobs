@@ -1,15 +1,15 @@
 name: Actualizar Trabajos - Diario
 
 on:
-  push:
-    branches:
-      - main
-      - data
+  # push:
+  #   branches:
+  #     - main
+  #     - data
   schedule:
     - cron: "49 18 * * *"
 
 jobs:
-  Scrapper:
+  ScrapperJobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
