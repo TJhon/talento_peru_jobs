@@ -4,7 +4,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 # lima = "02"
-deps = [str(n).zfill(2) for n in range(1, 26) if n != 15]
+deps = [str(n).zfill(2) for n in range(1, 3) if n != 15]
+# deps = [str(n).zfill(2) for n in range(1, 26) if n != 15]
 
 
 def ejecutar_dep(departamento) -> pd.DataFrame:

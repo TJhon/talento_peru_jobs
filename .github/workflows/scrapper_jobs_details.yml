@@ -3,8 +3,8 @@ name: Actualizar Trabajos - Diario
 on:
   push:
     branches:
-      - description_jobs_ubication
-      - rformat
+      - main
+      - data
   schedule:
     - cron: "49 18 * * *"
 
@@ -37,7 +37,7 @@ jobs:
           git config --local user.email "actions@github.com"
           git add -A
           git commit -m "Update Data"
-          git push origin rformat
+          git push
         env:
           REPO_KEY: ${{ secrets.GITHUB_TOKEN }}
           username: github-actions
