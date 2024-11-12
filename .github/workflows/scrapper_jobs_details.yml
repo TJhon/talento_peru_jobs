@@ -1,0 +1,43 @@
+name: Actualizar Trabajos - Diario
+
+on:
+  push:
+    branches:
+      # - main
+      - data
+  schedule:
+    - cron: "49 18 * * *"
+
+jobs:
+  ScrapperJobs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Chequear
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - run: python main.py
+
+      - id: commit
+        name: Commit  files
+        run: |
+          git config --local user.name "action-user"
+          git pull
+          git config --local user.email "actions@github.com"
+          git add -A
+          git commit -m "Update Data"
+          git push
+        env:
+          REPO_KEY: ${{ secrets.GITHUB_TOKEN }}
+          username: github-actions
