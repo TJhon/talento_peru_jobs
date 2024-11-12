@@ -1,6 +1,6 @@
 import pandas as pd, tqdm
 
-from .utils import job_wage_float
+from ..utils.utils import job_wage_float, clean_jobs_data
 
 URL_BASE = "https://raw.githubusercontent.com/TJhon/talento_peru_jobs/refs/heads/main/data/all/{date}.csv"
 
@@ -22,16 +22,6 @@ def get_logs():
         # }
     }
 
-    return data
-
-
-def clean_jobs_data(data: pd.DataFrame):
-    ubication_col = ["ubication_region", "ubication_dist"]
-    data[ubication_col] = data["ubication"].str.split("-", expand=True, n=1)
-    for u in ubication_col:
-        data[u] = data[u].str.strip()
-
-    data["salary"] = data["salary"].apply(job_wage_float)
     return data
 
 

@@ -1,13 +1,6 @@
-# utils.py
-
-from .global_env import share_payload, first_page, next_page, last_page, prev_page
+import pandas as pd
+from ..config.settings import share_payload, first_page, next_page, last_page, prev_page
 import re
-
-
-def job_wage_float(wage: str):
-    # 'S/. 1,950.00' -> 1950.00
-    wage = wage.replace(",", "").replace("S/.", "").strip()
-    return float(wage)
 
 
 def limpiar_espacios(texto):

@@ -1,11 +1,5 @@
-# global_env.py
-from rich import print
-
 URL = "https://app.servir.gob.pe/DifusionOfertasExterno/faces/consultas/ofertas_laborales.xhtml"
-# HEADERS = {
-#     "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36",
-#     "X-Requested-With": "XMLHttpRequest",
-# }
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
@@ -51,8 +45,6 @@ share_payload = {
     "frmLstOfertsLabo:txtNroConv": "",
 }
 
-# falta el view State
-# lima 15
 
 first_page = {
     "javax.faces.source": "frmLstOfertsLabo:j_idt42",
@@ -73,38 +65,31 @@ prev_page = {
 }
 
 
-dep = "01"
-view_state_value = "12345678901234567890123456789012"
-
-# print(goto_first_page_payload(view_state_value, dep))
-# print(goto_next_page_payload(view_state_value, dep))
-# print(goto_last_page_payload(view_state_value, dep))
-# print(goto_prev_page_payload(view_state_value, dep))
-
-depa_value = {
-    "01": "AMAZONAS",
-    "02": "ANCASH",
-    "03": "APURIMAC",
-    "04": "AREQUIPA",
-    "05": "AYACUCHO",
-    "06": "CAJAMARCA",
-    "07": "CALLAO",
-    "08": "CUSCO",
-    "09": "HUANCAVELICA",
-    "10": "HUANUCO",
-    "11": "ICA",
-    "12": "JUNIN",
-    "13": "LA LIBERTAD",
-    "14": "LAMBAYEQUE",
-    "15": "LIMA",
-    "16": "LORETO",
-    "17": "MADRE DE DIOS",
-    "18": "MOQUEGUA",
-    "19": "PASCO",
-    "20": "PIURA",
-    "21": "PUNO",
-    "22": "SAN MARTIN",
-    "23": "TACNA",
-    "24": "TUMBES",
-    "25": "UCAYALI",
+MAPPING_COLUMNS = {
+    "url_convocatoria": "job_posting_url",
+    "Cantidad De Vacantes:": "vacancies",
+    "Número De Convocatoria:": "job_posting_number",
+    "Remuneración:": "salary",
+    "Fecha Inicio De Publicación:": "start_publication_date",
+    "Fecha Fin De Publicación:": "end_publication_date",
+    "Experiencia:": "required_experience",
+    "Formación Académica - Perfil:": "educational_background",
+    "Especialización:": "specialization",
+    "Conocimiento:": "required_knowledge",
+    "Competencias:": "skills",
+    "position": "job_title",
+    "institution": "public_institution",
+    "uuid": "unique_id",
+    "day_scrapper": "scraping_date",
 }
+
+shared_columns = [
+    "public_institution",
+    "ubication",
+    "job_posting_number",
+    "vacancies",
+    "salary",
+    "start_publication_date",
+    "end_publication_date",
+    "job_title",
+]

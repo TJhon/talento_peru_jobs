@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - description_jobs_ubication
+  schedule:
+    - cron: "49 18 * * *"
 
 jobs:
   Scrapper:
