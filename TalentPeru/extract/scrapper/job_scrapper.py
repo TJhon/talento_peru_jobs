@@ -110,6 +110,7 @@ class JobScrapper:
         return locations
 
     def get_data(self):
+        self.data = [df for df in self.data if isinstance(df, pd.DataFrame)]
         data_details = pd.concat(self.data, ignore_index=True)
         data_details = data_details.rename(columns=columns)
         card_data = pd.concat(self.card_data, ignore_index=True)
