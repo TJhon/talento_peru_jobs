@@ -3,7 +3,7 @@ name: Actualizar Trabajos - Diario
 on:
   push:
     branches:
-      # - main
+      - main
       - data
   schedule:
     - cron: "49 18 * * *"
