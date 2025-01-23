@@ -1,7 +1,7 @@
 from .scrapper.job_scrapper import JobScrapper
-import pandas as pd
+import pandas as pd, os
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
+from ..utils import today 
 
 # lima = "02"
 # deps = [str(n).zfill(2) for n in range(1, 3) if n != 15]
@@ -10,6 +10,9 @@ deps = [str(n).zfill(2) for n in range(1, 26) if n != 15]
 
 def ejecutar_dep(departamento) -> pd.DataFrame:
     data_dep = JobScrapper(dep=departamento).scrapper_sequential()
+    dep_path = f'./data/history/{today}/{departamento.zfill(2)}.csv'
+    data_dep.to_csv(dep_path, index=False)
+
     return data_dep
 
 
@@ -34,5 +37,17 @@ def extract_jobs_in_parallel(n_workers=10, lima="15", deps=deps) -> pd.DataFrame
         for future in as_completed(future_dep):
             data_dep_list.append(future.result())
 
-    data = pd.concat(data_dep_list, ignore_index=True)
-    return data
+def get_today_data():
+    data_df = []
+    dir_dep = './data/history/{today}'
+
+    for csv in os.listdir(dir_dep):
+        if csv.endswith('.csv'):
+            abs_path = os.path.join(dir_dep, csv)
+            try:
+                df = pd.read_csv(abs_path)
+                data_df.append(df)
+            except:
+                pass
+    all_data = pd.concat(data_df, ignore_index=True)
+    return all_data
