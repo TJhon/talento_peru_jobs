@@ -12,6 +12,10 @@ def ejecutar_dep(departamento) -> pd.DataFrame:
     data_dep = JobScrapper(dep=departamento).scrapper_sequential()
     os.makedirs(f'./data/history/{today}', exist_ok=True)
     dep_path = f'./data/history/{today}/{departamento.zfill(2)}.csv'
+    if departamento == "15":
+        n = len(data_dep)
+        dep_path = f'./data/history/{today}/{departamento.zfill(2)}_{n}.csv'
+
     data_dep.to_csv(dep_path, index=False)
 
     return data_dep
