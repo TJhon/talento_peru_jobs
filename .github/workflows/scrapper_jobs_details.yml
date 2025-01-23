@@ -27,17 +27,33 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - run: python main.py
+      - run: python extract_data.py
 
-      - id: commit
+      - id: commit_raw
         name: Commit  files
         run: |
           git config --local user.name "action-user"
           git pull
           git config --local user.email "actions@github.com"
           git add -A
-          git commit -m "Update Data"
+          git commit -m "Update dep Data"
           git push
         env:
           REPO_KEY: ${{ secrets.GITHUB_TOKEN }}
           username: github-actions
+      - run: python transform_data.py
+
+
+      - id: commit_all_data
+        name: Commit  files
+        run: |
+          git config --local user.name "action-user"
+          git pull
+          git config --local user.email "actions@github.com"
+          git add -A
+          git commit -m "Update all Data"
+          git push
+        env:
+          REPO_KEY: ${{ secrets.GITHUB_TOKEN }}
+          username: github-actions
+ 

@@ -4,12 +4,13 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from ..utils import today 
 
 # lima = "02"
-# deps = [str(n).zfill(2) for n in range(1, 3) if n != 15]
+# deps = [str(n).zfill(2) for n in range(1, 2) if n != 15]
 deps = [str(n).zfill(2) for n in range(1, 26) if n != 15]
 
 
 def ejecutar_dep(departamento) -> pd.DataFrame:
     data_dep = JobScrapper(dep=departamento).scrapper_sequential()
+    os.makedirs(f'./data/history/{today}', exist_ok=True)
     dep_path = f'./data/history/{today}/{departamento.zfill(2)}.csv'
     data_dep.to_csv(dep_path, index=False)
 
@@ -18,11 +19,14 @@ def ejecutar_dep(departamento) -> pd.DataFrame:
 
 def extract_jobs_in_parallel(n_workers=10, lima="15", deps=deps) -> pd.DataFrame:
     def ejecutar_lima(right=True):
-        if right:
-            data_dep = JobScrapper(dep=lima).scrapper_both_right()
-        else:
-            data_dep = JobScrapper(dep=lima).scrapper_both_left()
-        return data_dep
+        try:
+            if right:
+                data_dep = JobScrapper(dep=lima).scrapper_both_right()
+            else:
+                data_dep = JobScrapper(dep=lima).scrapper_both_left()
+            return data_dep
+        except:
+            return pd.DataFrame()
 
     data_dep_list = []  # almacena datafa4rames
 
@@ -39,7 +43,7 @@ def extract_jobs_in_parallel(n_workers=10, lima="15", deps=deps) -> pd.DataFrame
 
 def get_today_data():
     data_df = []
-    dir_dep = './data/history/{today}'
+    dir_dep = f'./data/history/{today}'
 
     for csv in os.listdir(dir_dep):
         if csv.endswith('.csv'):
